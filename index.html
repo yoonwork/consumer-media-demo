@@ -12,8 +12,8 @@
   color-scheme: light;
   --brand:#2457F5; --brand-hover:#1B45D6; --brand-press:#1638B0; --brand-text:#1B45D6;
   --brand-tint:#EEF3FF; --brand-tint-2:#D9E4FF; --ring:0 0 0 3px rgba(36,87,245,.25); --on-brand:#FFFFFF;
-  /* 바탕만 신문처럼 따뜻한 회백색 */
-  --bg:#F4F2EE; --card:#FFFFFF; --soft:#F8F7F4; --track:#EAE7E1; --line:#E2DED7; --line-2:#E9E6E0;
+  /* 흰 바탕 + 아주 옅은 중립 회색 띠 (참고: 뉴스타파·경실련·Which?의 흰 바탕) */
+  --bg:#FFFFFF; --card:#FFFFFF; --soft:#F7F8FA; --track:#F2F4F6; --line:#E5E8EB; --line-2:#EEF0F3;
   --ink:#191F28; --ink-2:#4E5968; --mut:#636D7B; --mut-2:#9AA3AE; --rule:#191F28;
   --hl:#FFEB8A;
   --ok:#127A4F; --ok-bg:#E3F6ED; --ok-dot:#1FA971;
@@ -50,7 +50,7 @@ button{cursor:pointer}
 @media(min-width:768px){.demobar .long{display:inline}.demobar .short{display:none}}
 
 /* 머리 */
-.hd{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.hd{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.6) blur(12px);backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid var(--line)}
 .hd .wrap{display:flex;align-items:center;gap:8px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.02em;min-height:44px;white-space:nowrap}
 .logo i{width:28px;height:28px;border-radius:8px;background:var(--ink);display:grid;place-items:center;flex:none}
@@ -121,14 +121,32 @@ section{padding:40px 0}
 /* 메인 이슈 */
 .issue{padding-top:24px}
 .issue .lab{font-size:13px;font-weight:600;color:var(--mut);margin:0 0 8px}
-.lead{display:grid;gap:24px;margin-top:24px}
-@media(min-width:1024px){.lead{grid-template-columns:7fr 5fr;gap:48px;margin-top:32px}}
-.lead .big{font-size:32px;line-height:1.2;letter-spacing:-.04em;font-weight:700;margin:12px 0 16px}
+/* 이슈 머리: 뉴스타파 첫 화면처럼 왼쪽 글+관련 글 목록, 오른쪽 큰 사진 한 장 */
+.lead{display:grid;gap:20px;margin-top:20px}
+@media(min-width:1024px){.lead{grid-template-columns:5fr 6fr;gap:56px;margin-top:32px;align-items:stretch}}
+.lead .txt{display:flex;flex-direction:column;min-width:0}
+.hero-ph{position:relative;margin:0;border-radius:var(--r-lg);overflow:hidden;background:var(--track);aspect-ratio:16/10;order:-1}
+@media(min-width:1024px){.hero-ph{order:0;aspect-ratio:auto;min-height:480px}}
+.hero-ph img,.fph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.credit{position:absolute;right:10px;bottom:10px;font-size:11px;line-height:1;color:#fff;background:rgba(25,31,40,.55);padding:5px 8px;border-radius:var(--r-pill)}
+.hero-ph .cap{position:absolute;left:16px;bottom:14px;display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--r-pill);background:#fff;color:var(--ink);font-size:13px;font-weight:600;box-shadow:var(--sh-pill)}
+@media(min-width:768px){.hero-ph .cap{left:20px;bottom:20px}}
+.relist{list-style:none;margin:24px 0 0;padding:0;border-top:1px solid var(--line)}
+.relist a{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:12px 0;border-bottom:1px solid var(--line-2);align-items:baseline}
+.relist .t{font-size:16px;font-weight:600;line-height:1.45;letter-spacing:-.01em;grid-column:1/-1}
+.relist a:hover .t{text-decoration:underline;text-underline-offset:3px}
+.relist .meta{display:flex;align-items:center}
+.lead .all{display:inline-flex;min-height:44px;align-items:center;font-size:15px;font-weight:600;color:var(--brand-text);margin-top:4px}
+.lead .all:hover{text-decoration:underline}
+.lead .big{font-size:32px;line-height:1.2;letter-spacing:-.04em;font-weight:700;margin:8px 0 14px}
 @media(min-width:768px){.lead .big{font-size:56px;line-height:1.12}}
 .lead .desc{font-size:17px;color:var(--ink-2);max-width:620px;margin:0 0 20px}
 .lead .tagbig{font-size:20px;font-weight:700;color:var(--brand-text)}
-.lead .stat{display:flex;gap:32px;flex-wrap:wrap;margin-top:8px}
-.lead .stat b{display:block;font-size:44px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+/* 숫자 두 개는 Consumer Reports처럼 세로 줄로 나눠요 */
+.lead .stat{display:flex;gap:0;margin-top:4px}
+.lead .stat>div{padding:0 28px;border-left:1px solid var(--line)}
+.lead .stat>div:first-child{padding-left:0;border-left:0}
+.lead .stat b{display:block;font-size:40px;line-height:1.05;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-bottom:6px}
 .lead .stat span{font-size:13px;color:var(--mut)}
 .rel{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:8px 20px}
 .rel h3{font-size:15px;margin:12px 0 4px;color:var(--mut);font-weight:600}
@@ -140,11 +158,25 @@ section{padding:40px 0}
 /* 보도자료 블록 */
 .press{display:grid;gap:24px}
 @media(min-width:1024px){.press{grid-template-columns:5fr 7fr;gap:48px}}
+/* 대표 글: Which? 첫 기사처럼 큰 사진 + 제목, 옆 목록은 작은 사진 + 제목 + 날짜 */
+.fph{position:relative;display:block;border-radius:var(--r-lg);overflow:hidden;background:var(--track);aspect-ratio:16/10;margin-bottom:18px}
+@media(min-width:1024px){.fph{aspect-ratio:4/3}}
+.feat:hover .fph img{transform:scale(1.02)}
+.fph img{transition:transform .3s}
 .feat .t{font-size:24px;line-height:1.3;font-weight:700;letter-spacing:-.03em;margin:8px 0 12px}
 @media(min-width:768px){.feat .t{font-size:32px}}
 .feat p{color:var(--ink-2);margin:0 0 12px}
 .feat:hover .t{text-decoration:underline;text-underline-offset:4px}
 .list{border-top:1px solid var(--line)}
+.hlist{border-top:1px solid var(--line)}
+.hrow{display:grid;grid-template-columns:1fr 104px;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-2);align-items:center}
+@media(min-width:768px){.hrow{grid-template-columns:132px 1fr;gap:20px}.hrow .th{order:-1}}
+.hrow .th{position:relative;aspect-ratio:4/3;border-radius:var(--r-md);overflow:hidden;background:var(--track)}
+.hrow .th img{width:100%;height:100%;object-fit:cover;display:block}
+.hrow .t{display:block;font-size:17px;font-weight:600;line-height:1.45;letter-spacing:-.01em;margin-top:6px}
+.hrow:hover .t{text-decoration:underline;text-underline-offset:3px}
+.hrow .meta{display:flex;align-items:center;flex-wrap:wrap;gap:0}
+.badge{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;background:var(--brand-tint);color:var(--brand-text);font-size:12px;font-weight:700;margin-right:8px}
 .li{display:grid;grid-template-columns:1fr;gap:4px;padding:16px 0;border-bottom:1px solid var(--line);min-height:44px}
 .li .t{font-size:17px;font-weight:600;line-height:1.45;letter-spacing:-.01em}
 .li:hover .t{text-decoration:underline;text-underline-offset:3px}
@@ -158,7 +190,7 @@ section{padding:40px 0}
 .forumband{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:28px 20px;display:grid;gap:24px}
 @media(min-width:768px){.forumband{padding:48px;grid-template-columns:auto 1fr auto;align-items:center;gap:48px}}
 .forumband .dd{font-size:64px;line-height:1;font-weight:700;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-.forumband .dd small{display:block;font-size:15px;font-weight:500;color:#C9CED6;letter-spacing:0;margin-top:8px}
+.forumband .dd small{display:block;font-size:15px;white-space:nowrap;font-weight:500;color:#C9CED6;letter-spacing:0;margin-top:8px}
 .forumband h3{font-size:24px;line-height:1.35;margin:4px 0 8px;letter-spacing:-.02em}
 .forumband p{margin:0;color:#C9CED6;font-size:15px}
 .forumband .btn-s{background:#fff;color:var(--ink);border-color:#fff}
@@ -166,9 +198,10 @@ section{padding:40px 0}
 /* 자료실 */
 .lib{display:grid;gap:24px}
 @media(min-width:1024px){.lib{grid-template-columns:4fr 8fr;gap:48px}}
-.cover{aspect-ratio:1/1.414;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:9%;display:flex;flex-direction:column;container-type:inline-size;box-shadow:0 1px 0 var(--line)}
+.cover{aspect-ratio:1/1.414;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;padding:9%;display:flex;flex-direction:column;container-type:inline-size;box-shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06)}
 .cover .ty{font-size:4.6cqw;font-weight:600;color:var(--brand-text)}
-.cover h4{font-size:9cqw;line-height:1.22;letter-spacing:-.03em;margin:8cqw 0 0;font-weight:700}
+.cover h4{font-size:9cqw;line-height:1.22;letter-spacing:-.03em;margin:6cqw 0 0;font-weight:700}
+.cover .cimg{flex:1;min-height:0;margin:7cqw 0 6cqw;border-radius:2cqw;background:var(--track) center/cover no-repeat}
 .cover .bar{margin-top:auto;border-top:2px solid var(--ink);padding-top:3cqw;font-size:4cqw;color:var(--mut);display:flex;justify-content:space-between}
 .libbig{max-width:340px;display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:end}
 @media(min-width:1024px){.libbig{display:block}}
@@ -181,14 +214,14 @@ section{padding:40px 0}
 .ln .btn{height:44px;font-size:14px;padding:0 16px}
 
 /* 구독 띠 */
-.subband{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-xl);padding:28px 20px;display:grid;gap:20px}
+.subband{background:var(--brand-tint);border:0;border-radius:var(--r-xl);padding:28px 20px;display:grid;gap:20px}
 @media(min-width:768px){.subband{grid-template-columns:1fr auto;align-items:center;padding:40px 48px}}
 .subband h3{font-size:24px;margin:0 0 8px;letter-spacing:-.02em;line-height:1.35}
 @media(min-width:768px){.subband h3{font-size:32px}}
 .subband p{margin:0;color:var(--ink-2)}
 
 /* 바닥 */
-.ft{border-top:2px solid var(--rule);margin-top:24px;padding:40px 0 calc(40px + env(safe-area-inset-bottom));font-size:14px;color:var(--ink-2)}
+.ft{background:var(--soft);border-top:1px solid var(--line);margin-top:24px;padding:40px 0 calc(40px + env(safe-area-inset-bottom));font-size:14px;color:var(--ink-2)}
 .ft .g{display:grid;gap:32px}
 @media(min-width:1024px){.ft .g{grid-template-columns:1fr 1fr}}
 .ft h4{font-size:17px;color:var(--ink);margin:0 0 8px}
@@ -273,7 +306,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .contact{font-size:14px;color:var(--mut);border-top:1px solid var(--line);padding-top:16px}
 
 /* 뷰어 */
-.vw{position:fixed;inset:0;z-index:50;background:#E4E1DB;display:flex;flex-direction:column}
+.vw{position:fixed;inset:0;z-index:50;background:#EEF0F3;display:flex;flex-direction:column}
 .vbar{background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:4px;padding:6px 8px;min-height:60px}
 .vbar .ttl{flex:1;min-width:0;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px}
 .vbar .pg{font-size:14px;font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap;padding:0 4px}
@@ -281,7 +314,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .vbar .hide-s{display:none}
 @media(min-width:768px){.vbar .hide-s{display:flex}}
 .vbody{flex:1;display:flex;min-height:0}
-.thumbs{display:none;width:148px;overflow-y:auto;padding:16px;gap:12px;flex-direction:column;border-right:1px solid #D3CFC7;background:#ECE9E3}
+.thumbs{display:none;width:148px;overflow-y:auto;overflow-x:hidden;padding:16px;gap:12px;flex-direction:column;border-right:1px solid var(--line);background:var(--soft)}
 @media(min-width:1024px){.thumbs{display:flex}}
 .thumbs button{width:112px;border:2px solid transparent;border-radius:6px;padding:0;background:none;display:block}
 .thumbs button[aria-current="true"]{border-color:var(--brand)}
@@ -302,7 +335,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .pgx.cv .org{margin-top:auto;border-top:.5cqw solid #191F28;padding-top:2cqw;font-size:2.4cqw;display:flex;justify-content:space-between}
 .pgx table{width:100%;border-collapse:collapse;font-size:1.9cqw;margin:1cqw 0 2cqw}
 .pgx th,.pgx td{border-bottom:1px solid #ddd;padding:.9cqw .6cqw;text-align:left}
-.pgx th{background:#f5f5f2}
+.pgx th{background:#F5F6F8}
 .pgx .bars{display:grid;gap:1.2cqw;margin:2cqw 0}
 .pgx .bars div{display:grid;grid-template-columns:22cqw 1fr 7cqw;align-items:center;gap:1.5cqw;font-size:1.9cqw}
 .pgx .bars i{display:block;height:2.4cqw;background:var(--brand-tint-2);border-radius:0 1cqw 1cqw 0}
@@ -345,7 +378,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .org .grp{background:var(--soft);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:16px}
 .org .grp h4{margin:0 0 8px;font-size:15px}
 .org .grp ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink-2)}
-.map{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;background:#E8E5DE;border:1px solid var(--line)}
+.map{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;background:#EEF0F3;border:1px solid var(--line)}
 .map svg{width:100%;height:100%;display:block}
 .info{display:grid;gap:0;border-top:2px solid var(--ink)}
 .info div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -354,16 +387,16 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 
 /* 토론회 */
 .fi{border-bottom:1px solid var(--line)}
-.fi>button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:72px 1fr 28px;gap:16px;width:100%;padding:20px 0;cursor:pointer;align-items:start}
+.fi>button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:96px 1fr 28px;gap:16px;width:100%;padding:20px 0;cursor:pointer;align-items:start}
 .fi>button:focus-visible{box-shadow:var(--ring);border-radius:8px}
 .fi .dt{font-variant-numeric:tabular-nums;line-height:1.1}
-.fi .dt b{display:block;font-size:32px;letter-spacing:-.03em}
+.fi .dt b{display:block;font-size:30px;letter-spacing:-.03em;white-space:nowrap;margin-bottom:4px}
 .fi .dt span{font-size:13px;color:var(--mut)}
 .fi .t{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.02em;margin:6px 0 4px}
 .fi .chev{width:24px;height:24px;margin-top:8px;transition:transform .2s}
 .fi[data-open="true"] .chev{transform:rotate(180deg)}
 .fi .det{display:none;padding:0 0 24px}
-@media(min-width:768px){.fi .det{padding-left:88px}}
+@media(min-width:768px){.fi .det{padding-left:112px}}
 .fi[data-open="true"] .det{display:block}
 .st{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 8px;border-radius:var(--r-pill);font-size:12px;font-weight:600}
 .st::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
@@ -537,7 +570,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
         <div class="links">
           <a href="#/about/map">오시는 길</a><a href="#/privacy">개인정보처리방침</a><a href="#/subscribe">기자 구독</a><a href="#/admin">관리자 미리보기</a>
         </div>
-        <p class="meta" style="margin-top:12px">이 화면은 제안용 데모예요. 실제 단체와 관계없어요.</p>
+        <p class="meta" style="margin-top:12px">이 화면은 제안용 데모예요. 실제 단체와 관계없어요. 사진: Unsplash (무료 라이선스)</p>
       </div>
     </div>
   </div>
@@ -558,48 +591,54 @@ const TAGS={
  '식품표시':{title:'제로 음료, 표시만 보고 고를 수 있나',desc:'감미료 종류와 함량 표시가 제품마다 달라 비교가 어려운 문제를 다뤄요.'}
 };
 let activeTags=['통신비','AI약관','배달수수료','급발진입증','구독해지'];
+const TODAY='2026-10-22'; // 데모 기준 날짜
+/* 사진: Unsplash 무료 라이선스 (images.unsplash.com 직접 링크) */
+const PH=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
+const TAGIMG={'통신비':'1600087626014-e652e18bbff2','AI약관':'1563986768609-322da13575f3','배달수수료':'1526367790999-0150786686a2','급발진입증':'1549317661-bd32c8ce0db2','구독해지':'1593359677879-a4bb92f829d1','식품표시':'1534723452862-4c874018d66d'};
+const TAGCAP={'통신비':'휴대폰 요금','AI약관':'AI 서비스 약관','배달수수료':'배달 가격','급발진입증':'급발진 의심 사고','구독해지':'구독 서비스 해지','식품표시':'식품 표시'};
+const CATIMG={tel:'1601972599720-36938d4ecd31',ai:'1498050108023-c5249f4df085',plat:'1617347454431-f49d7ff5c3b1',car:'1503376780353-7e6692767b70',food:'1542838132-92c53300491e',soc:'1556740738-b6a63e27c4df'};
 
 let POSTS=[
- {id:101,kind:'보도자료',cat:'tel',date:'2026-11-18',tags:['통신비'],title:'5G 이용자 57%, 기본 데이터 절반도 못 써… 남는 데이터 이월 의무화해야',sum:'이용자 1,200명 설문(예시)에서 절반 넘게 기본 제공량의 50% 미만을 썼어요. 이월·중간 요금제 확대를 요구해요.',rich:true,lib:301},
- {id:102,kind:'성명',cat:'ai',date:'2026-11-16',tags:['AI약관'],title:'AI 서비스의 입력 데이터 학습, ‘기본 동의’가 아니라 ‘선택 동의’여야 한다',sum:'국내외 생성형 AI 서비스 10곳(예시)의 약관을 비교한 결과를 바탕으로 낸 성명이에요.'},
- {id:103,kind:'보도자료',cat:'plat',date:'2026-11-14',tags:['배달수수료'],title:'같은 짜장면, 매장 8,000원·앱 9,500원… 배달앱 이중가격 실태 조사',sum:'서울 5개 구 음식점 200곳(예시)의 매장 가격과 앱 가격을 비교했어요.'},
- {id:104,kind:'보도자료',cat:'car',date:'2026-11-12',tags:['급발진입증'],title:'급발진 의심 사고 입증 책임, 제조사로 옮기는 제조물책임법 개정 촉구',sum:'최근 3년 급발진 의심 신고 사례(예시)와 해외 입법례를 정리했어요.'},
- {id:105,kind:'보도자료',cat:'food',date:'2026-11-10',tags:['식품표시'],title:'제로 음료 30종 감미료 표시 점검… 함량 표시한 제품은 4종뿐',sum:'편의점 판매 제로 음료 30종(예시)의 감미료 표시 방식을 조사했어요.'},
- {id:106,kind:'성명',cat:'soc',date:'2026-11-07',tags:['구독해지'],title:'해지 버튼을 숨기는 것도 다크패턴이다… 공정위의 적극 조사를 요구한다',sum:'구독 서비스 해지 단계 조사(예시) 결과를 바탕으로 낸 성명이에요.'},
- {id:107,kind:'보도자료',cat:'plat',date:'2026-11-05',tags:['구독해지'],title:'OTT 6곳 해지 절차 비교… 가입 2단계, 해지는 평균 5단계',sum:'주요 OTT 6곳(예시)의 가입·해지 단계 수를 직접 세어 비교했어요.'},
- {id:108,kind:'보도자료',cat:'ai',date:'2026-11-03',tags:['AI약관'],title:'AI 챗봇 상담, 사람 상담원 연결까지 평균 4분 12초',sum:'금융·통신 고객센터 AI 챗봇 12곳(예시)에서 상담원 연결 시간을 쟀어요.'},
- {id:109,kind:'보도자료',cat:'tel',date:'2026-10-30',tags:['통신비'],title:'알뜰폰 전환 시 위약금·단말 할부 안내 미흡… 대리점 30곳 미스터리 쇼핑',sum:'대리점 30곳(예시)을 방문해 안내 내용을 기록했어요.'},
- {id:110,kind:'성명',cat:'car',date:'2026-10-28',tags:['급발진입증'],title:'사고기록장치(EDR) 데이터, 운전자에게도 원본을 공개하라',sum:'EDR 데이터 열람 절차의 문제를 짚은 성명이에요.'},
- {id:111,kind:'보도자료',cat:'food',date:'2026-10-24',tags:[],title:'배달 음식 용기 50종 표시 점검… 전자레인지 사용 가능 표시 제각각',sum:'배달 음식 용기 50종(예시)의 재질·사용 표시를 확인했어요.'},
- {id:112,kind:'보도자료',cat:'soc',date:'2026-10-21',tags:[],title:'고령 소비자 키오스크 주문 실험… 10명 중 6명 결제 단계에서 포기',sum:'65세 이상 40명(예시)이 패스트푸드 키오스크로 주문해 봤어요.'},
- {id:113,kind:'보도자료',cat:'ai',date:'2026-10-17',tags:[],title:'AI 추천 상품 광고 표시 점검… 쇼핑 앱 8곳 중 5곳이 광고 표시 작거나 없어',sum:'쇼핑 앱 8곳(예시)의 AI 추천 영역에서 광고 표시를 확인했어요.'},
- {id:114,kind:'성명',cat:'tel',date:'2026-10-14',tags:['통신비'],title:'단말기 유통법 폐지 이후, 이용자 차별 막을 장치부터 만들라',sum:'단통법 폐지 이후 보조금 차별 우려에 대한 성명이에요.'},
- {id:115,kind:'보도자료',cat:'plat',date:'2026-10-10',tags:['배달수수료'],title:'배달앱 ‘무료배달’ 표시, 최소주문금액 올려 사실상 소비자 부담',sum:'무료배달 표시 매장 100곳(예시)의 최소주문금액 변화를 추적했어요.'}
+ {id:101,kind:'보도자료',cat:'tel',date:'2026-10-21',tags:['통신비'],title:'5G 이용자 57%, 기본 데이터 절반도 못 써… 남는 데이터 이월 의무화해야',sum:'이용자 1,200명 설문(예시)에서 절반 넘게 기본 제공량의 50% 미만을 썼어요. 이월·중간 요금제 확대를 요구해요.',rich:true,lib:301},
+ {id:102,kind:'성명',cat:'ai',date:'2026-10-19',tags:['AI약관'],title:'AI 서비스의 입력 데이터 학습, ‘기본 동의’가 아니라 ‘선택 동의’여야 한다',sum:'국내외 생성형 AI 서비스 10곳(예시)의 약관을 비교한 결과를 바탕으로 낸 성명이에요.'},
+ {id:103,kind:'보도자료',cat:'plat',date:'2026-10-17',tags:['배달수수료'],title:'같은 짜장면, 매장 8,000원·앱 9,500원… 배달앱 이중가격 실태 조사',sum:'서울 5개 구 음식점 200곳(예시)의 매장 가격과 앱 가격을 비교했어요.'},
+ {id:104,kind:'보도자료',cat:'car',date:'2026-10-15',tags:['급발진입증'],title:'급발진 의심 사고 입증 책임, 제조사로 옮기는 제조물책임법 개정 촉구',sum:'최근 3년 급발진 의심 신고 사례(예시)와 해외 입법례를 정리했어요.'},
+ {id:105,kind:'보도자료',cat:'food',date:'2026-10-13',tags:['식품표시'],title:'제로 음료 30종 감미료 표시 점검… 함량 표시한 제품은 4종뿐',sum:'편의점 판매 제로 음료 30종(예시)의 감미료 표시 방식을 조사했어요.'},
+ {id:106,kind:'성명',cat:'soc',date:'2026-10-10',tags:['구독해지'],title:'해지 버튼을 숨기는 것도 다크패턴이다… 공정위의 적극 조사를 요구한다',sum:'구독 서비스 해지 단계 조사(예시) 결과를 바탕으로 낸 성명이에요.'},
+ {id:107,kind:'보도자료',cat:'plat',date:'2026-10-08',tags:['구독해지'],title:'OTT 6곳 해지 절차 비교… 가입 2단계, 해지는 평균 5단계',sum:'주요 OTT 6곳(예시)의 가입·해지 단계 수를 직접 세어 비교했어요.'},
+ {id:108,kind:'보도자료',cat:'ai',date:'2026-10-06',tags:['AI약관'],title:'AI 챗봇 상담, 사람 상담원 연결까지 평균 4분 12초',sum:'금융·통신 고객센터 AI 챗봇 12곳(예시)에서 상담원 연결 시간을 쟀어요.'},
+ {id:109,kind:'보도자료',cat:'tel',date:'2026-10-02',tags:['통신비'],title:'알뜰폰 전환 시 위약금·단말 할부 안내 미흡… 대리점 30곳 미스터리 쇼핑',sum:'대리점 30곳(예시)을 방문해 안내 내용을 기록했어요.'},
+ {id:110,kind:'성명',cat:'car',date:'2026-09-30',tags:['급발진입증'],title:'사고기록장치(EDR) 데이터, 운전자에게도 원본을 공개하라',sum:'EDR 데이터 열람 절차의 문제를 짚은 성명이에요.'},
+ {id:111,kind:'보도자료',cat:'food',date:'2026-09-26',tags:[],title:'배달 음식 용기 50종 표시 점검… 전자레인지 사용 가능 표시 제각각',sum:'배달 음식 용기 50종(예시)의 재질·사용 표시를 확인했어요.'},
+ {id:112,kind:'보도자료',cat:'soc',date:'2026-09-23',tags:[],title:'고령 소비자 키오스크 주문 실험… 10명 중 6명 결제 단계에서 포기',sum:'65세 이상 40명(예시)이 패스트푸드 키오스크로 주문해 봤어요.'},
+ {id:113,kind:'보도자료',cat:'ai',date:'2026-09-19',tags:[],title:'AI 추천 상품 광고 표시 점검… 쇼핑 앱 8곳 중 5곳이 광고 표시 작거나 없어',sum:'쇼핑 앱 8곳(예시)의 AI 추천 영역에서 광고 표시를 확인했어요.'},
+ {id:114,kind:'성명',cat:'tel',date:'2026-09-16',tags:['통신비'],title:'단말기 유통법 폐지 이후, 이용자 차별 막을 장치부터 만들라',sum:'단통법 폐지 이후 보조금 차별 우려에 대한 성명이에요.'},
+ {id:115,kind:'보도자료',cat:'plat',date:'2026-09-12',tags:['배달수수료'],title:'배달앱 ‘무료배달’ 표시, 최소주문금액 올려 사실상 소비자 부담',sum:'무료배달 표시 매장 100곳(예시)의 최소주문금액 변화를 추적했어요.'}
 ];
 const FORUMS=[
  {id:201,date:'2026-12-04',time:'14:00',place:'서울 여의도 ○○회관 2층 (예시)',status:'up',tags:['급발진입증'],cat:'car',title:'급발진 의심 사고, 입증 책임은 누구에게 있어야 하나',sum:'법학·자동차공학 전문가와 피해 가족이 함께 이야기해요.',panel:[['발제','○○대 법학전문대학원 교수 (예시)'],['토론','자동차공학 연구자, 피해자 가족, 국회 입법조사관 (예시)'],['사회','○○소비자연대 정책위원장 (예시)']]},
  {id:202,date:'2026-11-20',time:'10:00',place:'온라인 생중계 (예시)',status:'up',tags:['AI약관'],cat:'ai',title:'AI 기본법 시행령, 소비자 보호 조항은 충분한가',sum:'시행령 초안에서 이용자 고지·이의제기 조항을 살펴봐요.',panel:[['발제','AI 정책 연구자 (예시)'],['토론','변호사, 개발자 단체, 이용자 대표 (예시)'],['사회','○○소비자연대 사무총장 (예시)']]},
- {id:203,date:'2026-10-29',time:'14:00',place:'서울 관악구 ○○센터 (예시)',status:'done',tags:['통신비'],cat:'tel',title:'중간 요금제 2년, 통신비는 정말 내려갔나',sum:'요금제 개편 2년의 효과를 숫자로 점검했어요. 발제 자료를 자료실에서 볼 수 있어요.',panel:[['발제','통신정책 연구자 (예시)'],['토론','알뜰폰 사업자, 경제학자, 이용자 대표 (예시)'],['사회','○○소비자연대 통신위원장 (예시)']],lib:304}
+ {id:203,date:'2026-09-30',time:'14:00',place:'서울 관악구 ○○센터 (예시)',status:'done',tags:['통신비'],cat:'tel',title:'중간 요금제 2년, 통신비는 정말 내려갔나',sum:'요금제 개편 2년의 효과를 숫자로 점검했어요. 발제 자료를 자료실에서 볼 수 있어요.',panel:[['발제','통신정책 연구자 (예시)'],['토론','알뜰폰 사업자, 경제학자, 이용자 대표 (예시)'],['사회','○○소비자연대 통신위원장 (예시)']],lib:304}
 ];
 const LIB=[
- {id:301,type:'brief',cat:'tel',date:'2026-11-18',pages:42,tags:['통신비'],title:'5G 요금제 이용 실태와 데이터 이월 제도 도입 방안',sum:'이용자 설문과 해외 사례를 담은 소비자보고서 Brief예요.'},
- {id:302,type:'policy',cat:'ai',date:'2026-11-16',pages:28,tags:['AI약관'],title:'생성형 AI 서비스 약관 비교와 입력 데이터 학습 동의 개선안',sum:'서비스 10곳 약관 조항 비교표(예시)를 담았어요.'},
- {id:303,type:'journal',cat:'soc',date:'2026-11-01',pages:48,tags:['구독해지'],title:'소비자정책저널 제1호 — 다크패턴과 소비자 선택권',sum:'연구자 4명(예시)의 글을 모은 저널 창간호예요.'},
- {id:304,type:'policy',cat:'tel',date:'2026-10-29',pages:36,tags:['통신비'],title:'토론회 발제집 — 중간 요금제 2년, 통신비는 정말 내려갔나',sum:'10월 29일 토론회 발제와 토론 자료를 묶었어요.'},
- {id:305,type:'column',cat:'plat',date:'2026-10-20',pages:6,tags:['배달수수료'],title:'칼럼 — 배달비는 사라지지 않는다, 옮겨갈 뿐이다',sum:'정책위원(예시)의 칼럼이에요.'},
- {id:306,type:'brief',cat:'food',date:'2026-10-12',pages:40,tags:['식품표시'],title:'제로 음료 감미료 표시 실태와 표시 기준 개선 제안',sum:'제품 30종 표시 조사(예시) 결과예요.'}
+ {id:301,type:'brief',cat:'tel',date:'2026-10-21',pages:42,tags:['통신비'],title:'5G 요금제 이용 실태와 데이터 이월 제도 도입 방안',sum:'이용자 설문과 해외 사례를 담은 소비자보고서 Brief예요.'},
+ {id:302,type:'policy',cat:'ai',date:'2026-10-19',pages:28,tags:['AI약관'],title:'생성형 AI 서비스 약관 비교와 입력 데이터 학습 동의 개선안',sum:'서비스 10곳 약관 조항 비교표(예시)를 담았어요.'},
+ {id:303,type:'journal',cat:'soc',date:'2026-10-04',pages:48,tags:['구독해지'],title:'소비자정책저널 제1호 — 다크패턴과 소비자 선택권',sum:'연구자 4명(예시)의 글을 모은 저널 창간호예요.'},
+ {id:304,type:'policy',cat:'tel',date:'2026-10-01',pages:36,tags:['통신비'],title:'토론회 발제집 — 중간 요금제 2년, 통신비는 정말 내려갔나',sum:'9월 30일 토론회 발제와 토론 자료를 묶었어요.'},
+ {id:305,type:'column',cat:'plat',date:'2026-09-22',pages:6,tags:['배달수수료'],title:'칼럼 — 배달비는 사라지지 않는다, 옮겨갈 뿐이다',sum:'정책위원(예시)의 칼럼이에요.'},
+ {id:306,type:'brief',cat:'food',date:'2026-09-14',pages:40,tags:['식품표시'],title:'제로 음료 감미료 표시 실태와 표시 기준 개선 제안',sum:'제품 30종 표시 조사(예시) 결과예요.'}
 ];
 const LTYPE={policy:'정책자료',brief:'소비자보고서 Brief',column:'칼럼',journal:'저널'};
 const NOTICES=[
- {id:401,pin:true,date:'2026-11-15',title:'창립총회 안내 (12월 예정, 예시)'},
- {id:402,pin:true,date:'2026-11-02',title:'기자 전용 보도자료 메일 구독 안내'},
- {id:403,date:'2026-11-12',title:'12월 4일 급발진 토론회 참가 신청 받아요'},
- {id:404,date:'2026-10-25',title:'자원활동가 모집 (모니터링단 20명, 예시)'},
- {id:405,date:'2026-10-18',title:'홈페이지를 새로 열었어요'}
+ {id:401,pin:true,date:'2026-10-16',title:'창립총회 안내 (12월 예정, 예시)'},
+ {id:402,pin:true,date:'2026-10-05',title:'기자 전용 보도자료 메일 구독 안내'},
+ {id:403,date:'2026-10-14',title:'12월 4일 급발진 토론회 참가 신청 받아요'},
+ {id:404,date:'2026-09-24',title:'자원활동가 모집 (모니터링단 20명, 예시)'},
+ {id:405,date:'2026-09-10',title:'홈페이지를 새로 열었어요'}
 ];
 const CARDS=[
- {id:501,cat:'tel',date:'2026-11-17',tags:['통신비'],title:'카드뉴스 — 내 데이터, 매달 얼마나 남고 있을까',sum:'5G 요금제 조사 결과를 카드 6장으로 정리했어요.',slides:[['내 데이터,','매달 얼마나 남고 있을까?'],['57%','5G 이용자 절반 넘게 기본 데이터의 절반도 못 써요 (예시)'],['남은 데이터는?','대부분 다음 달로 넘어가지 않아요'],['중간 요금제','구간 사이가 넓어 내려갈 곳이 없어요'],['우리의 요구','남은 데이터 이월, 촘촘한 중간 요금제'],['더 알아보기','소비자보고서 Brief 42쪽에서 자세히']]},
- {id:502,cat:'ai',date:'2026-11-15',tags:['AI약관'],title:'카드뉴스 — AI가 내 글로 공부해도 될까',sum:'AI 서비스 약관 비교를 카드 5장으로 정리했어요.',slides:[['AI가 내 글로','공부해도 될까?'],['10곳 중 7곳','입력 내용 학습이 기본으로 켜져 있어요 (예시)'],['끄는 방법','설정 메뉴 3단계 아래에 있어요'],['우리의 요구','기본은 꺼짐, 켜는 건 이용자가'],['더 알아보기','정책자료 28쪽에서 자세히']]}
+ {id:501,cat:'tel',date:'2026-10-20',tags:['통신비'],title:'카드뉴스 — 내 데이터, 매달 얼마나 남고 있을까',sum:'5G 요금제 조사 결과를 카드 6장으로 정리했어요.',slides:[['내 데이터,','매달 얼마나 남고 있을까?'],['57%','5G 이용자 절반 넘게 기본 데이터의 절반도 못 써요 (예시)'],['남은 데이터는?','대부분 다음 달로 넘어가지 않아요'],['중간 요금제','구간 사이가 넓어 내려갈 곳이 없어요'],['우리의 요구','남은 데이터 이월, 촘촘한 중간 요금제'],['더 알아보기','소비자보고서 Brief 42쪽에서 자세히']]},
+ {id:502,cat:'ai',date:'2026-10-18',tags:['AI약관'],title:'카드뉴스 — AI가 내 글로 공부해도 될까',sum:'AI 서비스 약관 비교를 카드 5장으로 정리했어요.',slides:[['AI가 내 글로','공부해도 될까?'],['10곳 중 7곳','입력 내용 학습이 기본으로 켜져 있어요 (예시)'],['끄는 방법','설정 메뉴 3단계 아래에 있어요'],['우리의 요구','기본은 꺼짐, 켜는 건 이용자가'],['더 알아보기','정책자료 28쪽에서 자세히']]}
 ];
 const FAQS=[
  {id:601,title:'보도자료를 기사에 그대로 써도 되나요?',a:'네, 출처만 밝혀 주시면 돼요. 표와 그래프 원본이 필요하면 보도 문의로 연락 주세요. (예시)'},
@@ -636,16 +675,17 @@ const IC={
 let tt;
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
 function kindChip(k){return `<span class="kind${k==='성명'?' sm':''}">${k}</span>`}
-function coverHTML(l){return `<div class="cover" aria-hidden="true"><div class="ty">${LTYPE[l.type]}</div><h4>${esc(shortTitle(l.title))}</h4><div class="bar"><span>○○소비자연대</span><span class="num">${fmt(l.date).slice(0,7)}</span></div></div>`}
+function coverHTML(l){return `<div class="cover" aria-hidden="true"><div class="ty">${LTYPE[l.type]}</div><h4>${esc(shortTitle(l.title))}</h4><div class="cimg" style="background-image:url('${PH(CATIMG[l.cat],400)}')"></div><div class="bar"><span>○○소비자연대</span><span class="num">${fmt(l.date).slice(0,7)}</span></div></div>`}
 function shortTitle(t){return t.replace(/^(토론회 발제집|칼럼|소비자정책저널 제1호) — /,'')}
 function libRow(l){return `<div class="ln">${coverHTML(l)}<div><div class="meta">${LTYPE[l.type]}<span class="dot"></span>${catName(l.cat)}<span class="dot"></span><span class="num">${fmt(l.date)}</span><span class="dot"></span><span class="num">${l.pages}쪽</span></div><div class="t">${esc(l.title)}</div><div class="acts"><a class="btn btn-d" href="#/read/${l.id}">바로 읽기</a><button class="btn btn-s" data-dl>PDF 받기</button></div></div></div>`}
+function homeRow(p){return `<a class="hrow" href="#/post/${p.id}"><span><span class="meta"><span class="badge">${catName(p.cat)}</span>${p.kind}<span class="dot"></span><span class="num">${fmt(p.date)}</span></span><span class="t">${esc(p.title)}</span></span><span class="th"><img src="${PH(CATIMG[p.cat],320)}" alt="" loading="lazy"></span></a>`}
 function pressRow(p,q){return `<a class="li" href="#/post/${p.id}"><span class="d">${fmt(p.date)}</span><span><span class="cat">${catName(p.cat)}</span><span class="kmob"><span class="dot"></span>${p.kind}</span><span class="t" style="display:block;margin-top:2px">${hl(p.title,q)}</span>${q?`<span class="s">${hl(p.sum,q)}</span>`:''}</span><span class="kpc">${kindChip(p.kind)}</span></a>`}
 function hl(s,q){s=esc(s);if(!q)return s;const k=esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return s.replace(new RegExp(k,'gi'),m=>`<mark class="hit">${m}</mark>`)}
 function itemsForTag(t){
   const a=[];
   POSTS.filter(p=>p.tags.includes(t)).forEach(p=>a.push({kind:p.kind,date:p.date,title:p.title,href:'#/post/'+p.id}));
   CARDS.filter(c=>c.tags.includes(t)).forEach(c=>a.push({kind:'카드뉴스',date:c.date,title:c.title,href:'#/card/'+c.id}));
-  FORUMS.filter(f=>f.tags.includes(t)).forEach(f=>a.push({kind:'토론회',date:f.date,title:f.title,href:'#/forum/'+f.id}));
+  FORUMS.filter(f=>f.tags.includes(t)).forEach(f=>a.push({kind:f.date>TODAY?'토론회 예정':'토론회',date:f.date,title:f.title,href:'#/forum/'+f.id}));
   LIB.filter(l=>l.tags.includes(t)).forEach(l=>a.push({kind:LTYPE[l.type],date:l.date,title:l.title,href:'#/read/'+l.id}));
   return a.sort(byNew);
 }
@@ -654,7 +694,7 @@ function itemsForTag(t){
 let curTag=null;
 function viewHome(){
   if(!activeTags.includes(curTag))curTag=activeTags[0];
-  const T=TAGS[curTag]||{title:'',desc:''};const items=itemsForTag(curTag);
+  const T=TAGS[curTag]||{title:'',desc:''};const items=itemsForTag(curTag);const past=items.filter(i=>i.date<=TODAY);
   const posts=[...POSTS].sort(byNew);const feat=posts[0];
   const nf=FORUMS.filter(f=>f.status==='up').sort((a,b)=>a.date.localeCompare(b.date))[0];
   const libs=[...LIB].sort(byNew);
@@ -664,34 +704,34 @@ function viewHome(){
       <p class="lab" id="issueH">지금 다루는 이슈</p>
       <div class="chips" role="tablist" aria-label="이슈 해시태그">${activeTags.map(t=>`<button class="chip" role="tab" aria-selected="${t===curTag}" data-tag="${t}">#${t}</button>`).join('')}</div>
       <div class="lead">
-        <div>
+        <div class="txt">
           <span class="tagbig">#${curTag}</span>
           <h1 class="big">${esc(T.title)}</h1>
           <p class="desc">${esc(T.desc)}</p>
-          <div class="stat"><div><b>${items.length}</b><span>이 이슈로 쓴 글·자료</span></div><div><b>${fmt((items[0]||{date:'-'}).date).slice(5)}</b><span>마지막 글</span></div></div>
+          <div class="stat"><div><b>${items.length}</b><span>이 이슈로 쓴 글·자료</span></div><div><b>${past[0]?fmt(past[0].date).slice(5):'-'}</b><span>마지막 글</span></div></div>
+          <ul class="relist" aria-label="#${curTag} 관련 글">
+          ${items.slice(0,4).map(i=>`<li><a href="${i.href}"><span class="meta"><span class="kind">${i.kind}</span><span class="dot"></span><span class="num">${fmt(i.date)}</span></span><span class="t">${esc(i.title)}</span></a></li>`).join('')||'<li class="meta" style="padding:16px 0">아직 이 이슈로 쓴 글이 없어요.</li>'}
+          </ul>
+          ${items.length>4?`<a class="all" href="#/search?q=${encodeURIComponent(curTag)}">#${curTag} 글 ${items.length}건 모두 보기</a>`:''}
         </div>
-        <div class="rel">
-          <h3>#${curTag} 모아 보기</h3>
-          ${items.slice(0,4).map(i=>`<a class="row" href="${i.href}"><span class="meta"><span class="kind">${i.kind}</span><span class="dot"></span><span class="num">${fmt(i.date)}</span></span><span class="t" style="display:block">${esc(i.title)}</span></a>`).join('')||'<p class="meta" style="padding:16px 0">아직 이 이슈로 쓴 글이 없어요.</p>'}
-          ${items.length>4?`<a class="more" href="#/search?q=${encodeURIComponent(curTag)}">#${curTag} 글 ${items.length}건 모두 보기</a>`:''}
-        </div>
+        <figure class="hero-ph"><img src="${PH(TAGIMG[curTag]||CATIMG.tel,1400)}" alt="${esc(TAGCAP[curTag]||curTag)} 관련 사진" fetchpriority="high"><span class="cap">#${curTag} · ${esc(TAGCAP[curTag]||'')}</span><span class="credit">사진 Unsplash</span></figure>
       </div>
     </section>
 
     <section aria-labelledby="pressH">
       <div class="shd"><h2 id="pressH">보도자료·성명</h2><a class="more" href="#/press">전체 보기</a></div>
       <div class="press">
-        <a class="feat" href="#/post/${feat.id}"><span class="meta"><span class="cat">${catName(feat.cat)}</span><span class="dot"></span>${feat.kind}<span class="dot"></span><span class="num">${fmt(feat.date)}</span></span><div class="t">${esc(feat.title)}</div><p>${esc(feat.sum)}</p></a>
+        <a class="feat" href="#/post/${feat.id}"><span class="fph"><img src="${PH(CATIMG[feat.cat],1000)}" alt="" loading="lazy"><span class="credit">사진 Unsplash</span></span><span class="meta"><span class="badge">${feat.kind}</span><span class="cat">${catName(feat.cat)}</span><span class="dot"></span><span class="num">${fmt(feat.date)}</span></span><div class="t">${esc(feat.title)}</div><p>${esc(feat.sum)}</p></a>
         <div>
           <div class="chips" style="margin-bottom:12px" aria-label="분야 바로가기">${CATS.map(c=>`<a class="chip" href="#/press?cat=${c.id}">${c.name}</a>`).join('')}</div>
-          <div class="list">${posts.slice(1,6).map(p=>pressRow(p)).join('')}</div>
+          <div class="hlist">${posts.slice(1,5).map(homeRow).join('')}</div>
         </div>
       </div>
     </section>
 
     ${nf?`<section aria-label="다음 토론회"><div class="forumband">
-      <div class="dd">${fmt(nf.date).slice(5)}<small>${dday(nf.date)} · ${nf.time}</small></div>
-      <div><span class="meta" style="color:#C9CED6">다음 토론회 · ${esc(nf.place)}</span><h3>${esc(nf.title)}</h3><p>${esc(nf.sum)}</p></div>
+      <div class="dd">${fmt(nf.date).slice(5)}<small>${wday(nf.date)} · ${ampm(nf.time)}</small></div>
+      <div><span class="meta" style="color:#C9CED6">다음 토론회 · ${dday(nf.date)} · ${esc(nf.place)}</span><h3>${esc(nf.title)}</h3><p>${esc(nf.sum)}</p></div>
       <a class="btn btn-s btn-lg" href="#/forum/${nf.id}">토론회 자세히 보기</a>
     </div></section>`:''}
 
@@ -699,7 +739,7 @@ function viewHome(){
       <div class="shd"><h2 id="libH">자료실</h2><a class="more" href="#/library">전체 보기</a></div>
       <div class="lib">
         <a class="libbig" href="#/read/${libs[0].id}">${coverHTML(libs[0])}<span><span class="meta">${LTYPE[libs[0].type]}<span class="dot"></span><span class="num">${libs[0].pages}쪽</span></span><span style="display:block;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.02em;margin-top:4px">${esc(libs[0].title)}</span></span></a>
-        <div style="border-top:1px solid var(--line)">${libs.slice(1,4).map(libRow).join('')}</div>
+        <div style="border-top:1px solid var(--line)">${libs.slice(1,5).map(libRow).join('')}</div>
       </div>
     </section>
 
@@ -709,7 +749,9 @@ function viewHome(){
     </div></section>
   </div>`;
 }
-function dday(d){const t=new Date('2026-11-20T00:00:00');const x=new Date(d+'T00:00:00');const n=Math.round((x-t)/864e5);return n>0?'D-'+n:n===0?'오늘':'지난 토론회'}
+function wday(d){return '일월화수목금토'[new Date(d+'T00:00:00').getDay()]+'요일'}
+function ampm(t){const [h,m]=t.split(':').map(Number);return (h<12?'오전 ':'오후 ')+((h%12)||12)+':'+String(m).padStart(2,'0')}
+function dday(d){const t=new Date(TODAY+'T00:00:00');const x=new Date(d+'T00:00:00');const n=Math.round((x-t)/864e5);return n>0?'D-'+n:n===0?'오늘':'지난 토론회'}
 
 /* ---------- 화면: 보도자료 ---------- */
 function viewPress(qs){
@@ -732,12 +774,12 @@ function chartSVG(){
   const d=[['10% 미만',9],['10~30%',21],['30~50%',27],['50~80%',26],['80% 이상',17]];
   const w=600,h=230,bw=72,gap=(w-60-bw*5)/4;
   return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="기본 데이터 사용 비율별 이용자 분포 막대그래프" style="width:100%;height:auto;font-family:inherit">
-   ${[0,10,20,30].map(v=>`<line x1="40" x2="${w}" y1="${190-v*5}" y2="${190-v*5}" stroke="#E2DED7" stroke-dasharray="3 3"/><text x="30" y="${194-v*5}" font-size="12" fill="#636D7B" text-anchor="end">${v}%</text>`).join('')}
+   ${[0,10,20,30].map(v=>`<line x1="40" x2="${w}" y1="${190-v*5}" y2="${190-v*5}" stroke="#E5E8EB" stroke-dasharray="3 3"/><text x="30" y="${194-v*5}" font-size="12" fill="#636D7B" text-anchor="end">${v}%</text>`).join('')}
    ${d.map((x,i)=>{const X=60+i*(bw+gap),H=x[1]*5;return `<rect x="${X}" y="${190-H}" width="${bw}" height="${H}" rx="8" fill="${i<3?'#2457F5':'#D9E4FF'}"/><text x="${X+bw/2}" y="${182-H}" font-size="14" font-weight="700" text-anchor="middle" fill="#191F28">${x[1]}%</text><text x="${X+bw/2}" y="${212}" font-size="12" text-anchor="middle" fill="#636D7B">${x[0]}</text>`}).join('')}
   </svg>`;
 }
 function bodyRich(){return `
- <p>○○소비자연대(예시)는 11월 한 달 동안 5G 요금제 이용자 1,200명에게 지난 3개월 데이터 사용량을 물었어요. 그 결과 <mark>응답자의 57%가 요금제에 들어 있는 기본 데이터의 절반도 쓰지 못한 것</mark>으로 나타났어요.</p>
+ <p>○○소비자연대(예시)는 9월 한 달 동안 5G 요금제 이용자 1,200명에게 지난 3개월 데이터 사용량을 물었어요. 그 결과 <mark>응답자의 57%가 요금제에 들어 있는 기본 데이터의 절반도 쓰지 못한 것</mark>으로 나타났어요.</p>
  <figure><div class="img">${chartSVG()}</div><figcaption><b>그림 1.</b> 기본 제공 데이터 대비 실제 사용 비율별 이용자 분포. 진한 막대가 ‘절반 미만 사용’ 구간이에요. (예시 자료, n=1,200)</figcaption></figure>
  <p>남은 데이터는 대부분 다음 달로 넘어가지 않아요. 조사에 응한 이용자들은 “쓰지 않은 데이터 값까지 내고 있다”고 답했어요.</p>
  <blockquote>“요금제를 내려 보려 해도 중간 구간이 없어서, 결국 쓰지도 않는 데이터 값을 계속 내고 있어요.”<cite>— 설문 응답자, 30대 직장인 (예시)</cite></blockquote>
@@ -770,7 +812,7 @@ function viewPost(id){
 function viewForum(open){
   const up=FORUMS.filter(f=>f.status==='up').sort((a,b)=>a.date.localeCompare(b.date));
   const done=FORUMS.filter(f=>f.status==='done').sort(byNew);
-  const item=f=>`<div class="fi" data-open="${f.id==open}" id="f${f.id}"><button aria-expanded="${f.id==open}" data-f="${f.id}"><span class="dt"><b>${fmt(f.date).slice(5)}</b><span class="num">${f.date.slice(0,4)} · ${f.time}</span></span><span><span class="st ${f.status}">${f.status==='up'?'신청 받는 중':'끝났어요'}</span><span class="t" style="display:block">${esc(f.title)}</span><span class="meta">${esc(f.place)}</span></span>${IC.chev}</button>
+  const item=f=>`<div class="fi" data-open="${f.id==open}" id="f${f.id}"><button aria-expanded="${f.id==open}" data-f="${f.id}"><span class="dt"><b>${fmt(f.date).slice(5)}</b><span class="num">${wday(f.date).slice(0,1)} · ${ampm(f.time)}</span></span><span><span class="st ${f.status}">${f.status==='up'?'신청 받는 중':'끝났어요'}</span><span class="t" style="display:block">${esc(f.title)}</span><span class="meta">${esc(f.place)}</span></span>${IC.chev}</button>
    <div class="det"><p style="margin:0 0 8px;color:var(--ink-2)">${esc(f.sum)}</p><div class="panel">${f.panel.map(x=>`<div><span>${x[0]}</span><b style="font-weight:500">${x[1]}</b></div>`).join('')}</div>
    <div style="display:flex;gap:8px;flex-wrap:wrap">${f.status==='up'?`<button class="btn btn-p" data-apply>참가 신청하기</button>`:''}${f.lib?`<a class="btn btn-s" href="#/read/${f.lib}">발제 자료 읽기</a>`:''}${f.status==='done'?`<button class="btn btn-s" data-video>다시 보기 영상</button>`:''}</div></div></div>`;
   app.innerHTML=`<div class="wrap"><div class="ph"><h1>토론회·포럼</h1><p>다가오는 토론회는 날짜가 가까운 순서, 지난 토론회는 새 순서로 보여요. 자료와 영상도 같이 남겨요.</p></div>
@@ -873,11 +915,11 @@ function viewAbout(sub){
   const tabs=[['greeting','인사말'],['history','연혁'],['org','조직도'],['map','오시는 길']];
   let c='';
   if(sub==='greeting')c=`<div class="two"><div><p class="meta">인사말</p></div><div class="greet"><p class="q">소비자가 알아야 할 것을, 소비자가 이해할 수 있는 말로 알리겠습니다.</p><p>새 기술과 새 서비스는 빠르게 나오지만, 그 약관과 가격 구조를 꼼꼼히 읽어 줄 사람은 많지 않아요. ○○소비자연대(예시)는 AI, 통신, 플랫폼, 자동차, 식품, 사회 여섯 분야에서 직접 조사하고, 그 결과를 누구나 읽을 수 있게 공개하려고 해요.</p><p>보도자료와 보고서는 이 홈페이지에 가장 먼저 올리고, 기자님과 시민 모두 같은 자료를 같은 시간에 볼 수 있게 하겠어요.</p><p class="sign">공동대표 ○○○ · ○○○ (예시)</p></div></div>`;
-  if(sub==='history')c=`<div class="hist">${[['2026',[['12','창립총회 (예정, 예시)'],['11','홈페이지 열기, 첫 보도자료 발행 (예시)'],['10','발기인 모임 구성 (예시)']]],['2025',[['09','준비 모임 시작 (예시)']]]].map(y=>`<div class="y"><b>${y[0]}</b><ul>${y[1].map(m=>`<li><span>${m[0]}월</span>${m[1]}</li>`).join('')}</ul></div>`).join('')}</div>`;
+  if(sub==='history')c=`<div class="hist">${[['2026',[['12','창립총회 (예정, 예시)'],['09','홈페이지 열기, 첫 보도자료 발행 (예시)'],['07','발기인 모임 구성 (예시)']]],['2025',[['09','준비 모임 시작 (예시)']]]].map(y=>`<div class="y"><b>${y[0]}</b><ul>${y[1].map(m=>`<li><span>${m[0]}월</span>${m[1]}</li>`).join('')}</ul></div>`).join('')}</div>`;
   if(sub==='org')c=`<div class="org"><div class="n k">총회<small>회원 전체</small></div><div class="v"></div><div class="n">이사회<small>이사 9명 (예시)</small></div><div class="v"></div><div class="n k">공동대표</div><div class="v"></div>
    <div class="lv"><div class="grp"><h4>사무처</h4><ul><li>정책팀</li><li>소통팀</li><li>운영지원팀</li></ul></div><div class="grp"><h4>분야별 위원회</h4><ul>${CATS.map(x=>`<li>${x.name}위원회</li>`).join('')}</ul></div><div class="grp"><h4>부설</h4><ul><li>소비자정책연구소</li><li>시민 모니터링단</li></ul></div></div></div>`;
   if(sub==='map')c=`<div class="two"><div class="info">${[['주소','서울특별시 관악구 ○○로 00, 0층 (예시)'],['지하철','2호선 ○○역 0번 출구에서 걸어서 5분 (예시)'],['버스','○○정류장 하차 (예시)'],['문의 시간','평일 10:00~18:00']].map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</div>
-   <div><div class="map" aria-label="약도 (예시)"><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice"><rect width="640" height="400" fill="#ECE9E2"/><path d="M0 250 L640 210" stroke="#fff" stroke-width="28"/><path d="M220 0 L280 400" stroke="#fff" stroke-width="22"/><path d="M0 90 L640 120" stroke="#fff" stroke-width="12"/><path d="M470 0 L430 400" stroke="#fff" stroke-width="12"/><rect x="300" y="140" width="80" height="50" rx="6" fill="#DCD7CE"/><rect x="90" y="280" width="100" height="70" rx="6" fill="#DCD7CE"/><circle cx="252" cy="236" r="10" fill="#191F28"/><text x="268" y="270" font-size="15" fill="#4E5968">○○역 (예시)</text><g transform="translate(340 200)"><circle r="26" fill="#2457F5" opacity=".18"/><circle r="10" fill="#2457F5"/></g><text x="360" y="186" font-size="16" font-weight="700" fill="#191F28">○○소비자연대</text></svg></div>
+   <div><div class="map" aria-label="약도 (예시)"><svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice"><rect width="640" height="400" fill="#EEF0F3"/><path d="M0 250 L640 210" stroke="#fff" stroke-width="28"/><path d="M220 0 L280 400" stroke="#fff" stroke-width="22"/><path d="M0 90 L640 120" stroke="#fff" stroke-width="12"/><path d="M470 0 L430 400" stroke="#fff" stroke-width="12"/><rect x="300" y="140" width="80" height="50" rx="6" fill="#DDE1E6"/><rect x="90" y="280" width="100" height="70" rx="6" fill="#DDE1E6"/><circle cx="252" cy="236" r="10" fill="#191F28"/><text x="268" y="270" font-size="15" fill="#4E5968">○○역 (예시)</text><g transform="translate(340 200)"><circle r="26" fill="#2457F5" opacity=".18"/><circle r="10" fill="#2457F5"/></g><text x="360" y="186" font-size="16" font-weight="700" fill="#191F28">○○소비자연대</text></svg></div>
    <p class="meta">실제 사이트에서는 카카오맵이나 네이버 지도를 넣고, ‘길찾기’ 단추로 지도 앱을 열어요.</p></div></div>`;
   app.innerHTML=`<div class="wrap"><div class="ph"><h1>단체소개</h1></div><div class="tabs" role="tablist">${tabs.map(t=>`<a class="tab" role="tab" aria-selected="${t[0]===sub}" href="#/about/${t[0]}">${t[1]}</a>`).join('')}</div><section style="padding-top:32px">${c}</section></div>`;
 }
@@ -1023,7 +1065,7 @@ function viewAdmin(){
   $('#aPub').onclick=()=>{const t=$('#aTitle').value.trim();if(t.length<5){toast('제목을 5자 이상 써 주세요');$('#aTitle').focus();return}
     const b=$('#aPub');b.disabled=true;b.innerHTML='<span class="spin"></span>발행하는 중';
     setTimeout(()=>{const id=Math.max(...POSTS.map(p=>p.id))+1;const tags=[...document.querySelectorAll('#aTags [aria-pressed="true"]')].map(x=>x.dataset.t);
-      POSTS.push({id,kind:$('#aKind').value,cat:$('#aCat').value,date:'2026-11-20',tags,title:t,sum:ed.innerText.trim().split('\n')[0].slice(0,90)});
+      POSTS.push({id,kind:$('#aKind').value,cat:$('#aCat').value,date:TODAY,tags,title:t,sum:ed.innerText.trim().split('\n')[0].slice(0,90)});
       b.disabled=false;b.textContent='발행하기';
       toast($('#aSend').checked?`발행했어요 · 기자 ${subCount}명에게 발송 예약 (데모)`:'발행했어요 · 메일은 보내지 않았어요');
       setTimeout(()=>location.hash='#/post/'+id,1200)},800)};
