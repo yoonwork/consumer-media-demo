@@ -5,17 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>○○소비자연대 · 제안용 데모</title>
 <meta name="description" content="소비자단체 미디어형 홈페이지 제안용 데모입니다. 단체 이름과 글, 숫자는 모두 예시예요.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23191F28'/%3E%3Cpath d='M9 22V10h5.5a4 4 0 0 1 0 8H9' stroke='%23fff' stroke-width='2.6' fill='none'/%3E%3Ccircle cx='23' cy='21' r='2.6' fill='%232457F5'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23191F28'/%3E%3Cpath d='M9 22V10h5.5a4 4 0 0 1 0 8H9' stroke='%23fff' stroke-width='2.6' fill='none'/%3E%3Ccircle cx='23' cy='21' r='2.6' fill='%23D7261E'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
 <style id="tokens">
 :root{
   color-scheme: light;
-  --brand:#2457F5; --brand-hover:#1B45D6; --brand-press:#1638B0; --brand-text:#1B45D6;
-  --brand-tint:#EEF3FF; --brand-tint-2:#D9E4FF; --ring:0 0 0 3px rgba(36,87,245,.25); --on-brand:#FFFFFF;
-  /* 흰 바탕 + 아주 옅은 중립 회색 띠 (참고: 뉴스타파·경실련·Which?의 흰 바탕) */
-  --bg:#FFFFFF; --card:#FFFFFF; --soft:#F7F8FA; --track:#F2F4F6; --line:#E5E8EB; --line-2:#EEF0F3;
-  --ink:#191F28; --ink-2:#4E5968; --mut:#636D7B; --mut-2:#9AA3AE; --rule:#191F28;
-  --hl:#FFEB8A;
+  /* 3차: 감시 보도 신문 톤 — 먹색 + 흰 종이 + 경고 빨강 하나 + 형광펜 노랑 (무드보드 1·5·15·16·17) */
+  --brand:#D7261E; --brand-hover:#B91F18; --brand-press:#9C1A14; --brand-text:#B91F18;
+  --brand-tint:#FCEBE9; --brand-tint-2:#F6CFCB; --ring:0 0 0 3px rgba(215,38,30,.28); --on-brand:#FFFFFF;
+  --red-on-ink:#FF6B5E;
+  --bg:#FFFFFF; --card:#FFFFFF; --soft:#F6F5F2; --track:#F1EFEB; --line:#E4E2DD; --line-2:#EEECE8; --paper:#F3F0E8;
+  --ink:#111111; --ink-2:#3D3D3D; --mut:#6B6B6B; --mut-2:#A3A3A3; --rule:#111111;
+  --hl:#FFE14D;
+  --disp:"Archivo",var(--font);
   --ok:#127A4F; --ok-bg:#E3F6ED; --ok-dot:#1FA971;
   --warn:#7A5600; --warn-bg:#FFF3D4; --warn-dot:#F2B01E;
   --bad:#BF2930; --bad-bg:#FFE3E4; --bad-dot:#E5484D;
@@ -437,7 +441,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .admhd b{font-size:15px}
 .admhd .meta{color:#B7BEC7}
 .admhd a.btn{height:44px;background:#2E363F;color:#fff;font-size:14px}
-.admnote{background:var(--brand-tint);border:1px solid var(--brand-tint-2);border-radius:var(--r-md);padding:14px 16px;font-size:14px;color:#1D3A8A;margin:20px 0}
+.admnote{background:var(--brand-tint);border:1px solid var(--brand-tint-2);border-radius:var(--r-md);padding:14px 16px;font-size:14px;color:#7A1712;margin:20px 0}
 .admnote ul{margin:6px 0 0;padding-left:18px}
 .admg{display:grid;gap:20px;padding-bottom:48px}
 @media(min-width:1024px){.admg{grid-template-columns:5fr 7fr}}
@@ -497,6 +501,189 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 /* 토스트 */
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,24px);background:var(--ink);color:#fff;padding:14px 20px;border-radius:var(--r-md);font-size:15px;z-index:80;opacity:0;pointer-events:none;transition:all .2s;width:max-content;max-width:calc(100vw - 32px);box-shadow:var(--sh-pop)}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ================= 3차 디자인: 감시 보도 신문 톤 =================
+   무드보드: refs3/consumer/moodboard.jpg (번호는 디자인검토.md '3차 방향' 참고) */
+/* 머리: 흰 바탕, 현재 메뉴는 빨간 밑줄 (17 ProPublica) */
+.hd{background:#fff;border-bottom:1px solid var(--ink)}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:18px}
+.logo i{border-radius:4px}
+.nav a{border-radius:0;font-weight:600;color:var(--ink)}
+.nav a:hover{background:transparent;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
+.nav a[aria-current="page"]{background:transparent;box-shadow:none;text-decoration:underline;text-decoration-color:var(--brand);text-underline-offset:8px;text-decoration-thickness:3px}
+/* 구역 머리: 굵고 크게 (4·8) */
+.shd{border-top:3px solid var(--rule);padding-top:14px;margin-bottom:24px}
+.shd h2{font-size:30px;font-weight:900;letter-spacing:-.05em}
+@media(min-width:768px){.shd h2{font-size:48px;line-height:1.1}}
+.badge{border-radius:3px;background:var(--brand-tint);color:var(--brand-text)}
+.cover{border-radius:3px}
+.cover .bar{border-top-width:3px}
+.lib .cover .cimg{filter:grayscale(1) contrast(1.05)}
+
+/* 공통 꼬리표: 고정폭 느낌 대문자 (18 Rest of World, 19 The Pudding) */
+.kick{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);line-height:1}
+.kick i{width:8px;height:8px;border-radius:50%;background:var(--brand);flex:none}
+.kick .rule{flex:1;height:1px;background:currentColor;opacity:.9}
+.kick .n{font-variant-numeric:tabular-nums}
+.disp{font-family:var(--disp);font-stretch:75%;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+
+/* ---------- 첫 화면: 이슈 ---------- */
+.hx{padding:24px 0 0}
+@media(min-width:1024px){.hx{padding:40px 0 0}}
+.hx .chips{margin-top:16px}
+.hx .chip{font-weight:700;color:var(--ink);border-color:#CFCCC5}
+.hx .chip[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.hx-grid{display:grid;gap:24px;margin-top:20px}
+@media(min-width:1024px){.hx-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;margin-top:28px;align-items:start}}
+@media(max-width:1023px){.hx-grid>.txt{display:contents}.hx h1{order:1}.hx-ph{order:2;margin-bottom:8px}.hx .desc{order:3}.hx-stat{order:4;margin-top:0}}
+.hx h1{font-size:42px;line-height:1.1;letter-spacing:-.06em;font-weight:900;margin:0 0 18px}
+@media(min-width:768px){.hx h1{font-size:72px;line-height:1.04}}
+@media(min-width:1280px){.hx h1{font-size:92px}}
+/* 형광펜 (2): 글자 아래쪽만 칠하고, 처음 그릴 때 왼쪽에서 오른쪽으로 */
+.mk{background:linear-gradient(transparent 60%,var(--hl) 60%,var(--hl) 94%,transparent 94%) no-repeat 0 0/100% 100%;color:inherit;padding:0 .05em;margin:0 -.05em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hx .desc{font-size:17px;line-height:1.7;color:var(--ink-2);max-width:580px;margin:0}
+@media(min-width:768px){.hx .desc{font-size:19px}}
+/* 숫자 세 개 + 세로줄 (14·20) */
+.hx-stat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px;border-top:3px solid var(--ink);padding-top:16px;max-width:620px}
+.hx-stat>div{padding:0 14px;border-left:1px solid var(--line)}
+.hx-stat>div:first-child{padding-left:0;border-left:0}
+.hx-stat b{display:block;font-family:var(--disp);font-stretch:75%;font-weight:800;font-size:44px;line-height:.92;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(min-width:768px){.hx-stat>div{padding:0 26px}.hx-stat b{font-size:76px}}
+.hx-stat b em{font-style:normal;color:var(--brand)}
+.hx-stat>div>span{display:block;font-size:13px;color:var(--mut);margin-top:10px;font-weight:500}
+/* 큰 흑백 사진 + 겹치는 빨간 도장 + 검정 카드 (1·5·6 겹침, 16 흑백) */
+.hx-ph{position:relative;margin:4px 0 0}
+.hx-ph .im{position:relative;aspect-ratio:4/3;overflow:hidden;background:#2a2a2a;border-radius:3px}
+@media(min-width:1024px){.hx-ph{margin-top:8px}.hx-ph .im{aspect-ratio:4/5}}
+.hx-ph .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.06)}
+.hx-ph .credit{top:10px;bottom:auto}
+.stamp{position:absolute;z-index:3;right:12px;top:-30px;width:104px;height:104px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 10px 30px rgba(17,17,17,.25)}
+@media(min-width:1024px){.stamp{width:144px;height:144px;left:-64px;right:auto;top:48px}}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.stamp svg text{font-family:var(--disp);font-size:9.6px;font-weight:700;letter-spacing:.2em;fill:#fff;text-transform:uppercase}
+.stamp b{position:relative;font-size:13px;line-height:1.3;font-weight:800;letter-spacing:-.02em}
+@media(min-width:1024px){.stamp b{font-size:16px}}
+.stamp:hover{background:var(--brand-hover)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hx-card{position:relative;z-index:2;display:block;background:var(--ink);color:#fff;padding:18px 20px 20px;margin:-44px 14px 0;border-radius:3px;box-shadow:0 18px 40px rgba(17,17,17,.22)}
+@media(min-width:1024px){.hx-card{position:absolute;margin:0;left:-88px;right:40px;bottom:-36px;padding:22px 26px 24px}}
+.hx-card .kick{color:#fff}
+.hx-card .kick i{background:var(--red-on-ink)}
+.hx-card .t{display:block;font-size:18px;font-weight:700;line-height:1.42;letter-spacing:-.02em;margin-top:10px}
+@media(min-width:1024px){.hx-card .t{font-size:20px}}
+.hx-card:hover .t{text-decoration:underline;text-underline-offset:4px}
+/* 관련 글 띠: 신문 1면 아래 기사 줄 (3) */
+.tick{display:grid;margin-top:36px;border-top:3px solid var(--ink)}
+@media(min-width:768px){.tick{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:88px}}
+.tick a{display:block;padding:16px 0 18px;border-bottom:1px solid var(--line)}
+@media(min-width:768px){.tick a{padding:18px 22px 4px;border-bottom:0;border-left:1px solid var(--line)}.tick a:first-child{border-left:0;padding-left:0}}
+.tick .kick{font-size:11px;color:var(--mut)}
+.tick .kick b{color:var(--brand-text);font-weight:700}
+.tick .t{display:block;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-.02em;margin-top:10px}
+.tick a:hover .t{text-decoration:underline;text-underline-offset:3px}
+.tick-all{display:flex;justify-content:space-between;align-items:center;min-height:52px;margin-top:8px;font-weight:700;border-bottom:1px solid var(--line)}
+@media(min-width:768px){.tick-all{margin-top:24px}}
+.tick-all:hover{color:var(--brand-text)}
+.empty-row{padding:18px 0;color:var(--mut);font-size:15px}
+
+/* ---------- 검정 띠: 보도자료·성명 (1·17 흑백 대비) ---------- */
+.band-ink{background:var(--ink);color:#fff;padding:56px 0 64px;margin-top:64px}
+@media(min-width:768px){.band-ink{padding:96px 0 104px;margin-top:104px}}
+.bh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid #333}
+.bh .kick{color:#BDBDBD}
+.bh h2{font-size:44px;line-height:1;letter-spacing:-.06em;font-weight:900;margin:14px 0 0}
+@media(min-width:768px){.bh h2{font-size:88px}}
+.btn-o{background:transparent;border-color:rgba(255,255,255,.45);color:#fff}
+.btn-o:hover{background:#fff;color:var(--ink)}
+.chips-dk{margin-top:20px}
+.chips-dk .chip{background:transparent;border-color:#3A3A3A;color:#E8E8E8}
+.chips-dk .chip:hover{border-color:#fff;color:#fff}
+.chips-dk .chip .n{color:#8F8F8F;opacity:1}
+.pg{display:grid;gap:8px;margin-top:28px}
+@media(min-width:1024px){.pg{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;margin-top:40px}}
+.pf .im{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:3px;background:#222}
+.pf .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
+.pf:hover .im img{transform:scale(1.04);filter:grayscale(0)}
+.pf .meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;color:#A8A8A8}
+.pf .meta .kd{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:var(--brand);color:#fff;font-size:12px;font-weight:700}
+.pf .t{display:block;font-size:26px;line-height:1.28;font-weight:800;letter-spacing:-.045em;margin:12px 0 10px}
+@media(min-width:768px){.pf .t{font-size:40px;line-height:1.2}}
+.pf:hover .t{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.pf p{color:#A8A8A8;margin:0;font-size:16px}
+.prs{border-top:1px solid #333}
+@media(min-width:1024px){.prs{border-top:0}}
+.pr{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid #2E2E2E;align-items:start}
+@media(min-width:1024px){.pr:first-child{padding-top:0}}
+.pr .d{font-family:var(--disp);font-stretch:75%;font-weight:800;font-size:30px;line-height:.95;font-variant-numeric:tabular-nums}
+.pr .d small{display:block;font-size:12px;font-weight:600;font-stretch:100%;letter-spacing:.1em;color:#8F8F8F;margin-top:6px}
+.pr .c{font-size:13px;font-weight:700;color:var(--red-on-ink)}
+.pr .c span{color:#8F8F8F;font-weight:500}
+.pr .t{display:block;font-size:17px;font-weight:700;line-height:1.45;letter-spacing:-.02em;margin-top:4px;color:#fff}
+.pr:hover .t{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- 숫자로 보는 활동 (6·14·20 큰 숫자) ---------- */
+.nb{padding:56px 0 8px}
+@media(min-width:768px){.nb{padding:96px 0 24px}}
+.nb-h{display:grid;gap:12px;margin-bottom:28px}
+@media(min-width:1024px){.nb-h{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end;margin-bottom:40px}}
+.nb-h h2{margin:12px 0 0;font-size:32px;line-height:1.15;letter-spacing:-.055em;font-weight:900}
+@media(min-width:768px){.nb-h h2{font-size:56px}}
+.nb-h p{margin:0;color:var(--ink-2);font-size:16px}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:3px solid var(--ink)}
+@media(min-width:768px){.nums{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.nums a{display:block;padding:18px 16px 22px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums a:nth-child(odd){border-left:0;padding-left:0}
+@media(min-width:768px){.nums a{border-bottom:0;padding:22px 24px 8px}.nums a:nth-child(odd){border-left:1px solid var(--line);padding-left:24px}.nums a:first-child{border-left:0;padding-left:0}}
+.nums b{display:block;font-family:var(--disp);font-stretch:75%;font-weight:900;font-size:76px;line-height:.85;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+@media(min-width:768px){.nums b{font-size:132px}}
+.nums b sup{font-size:.36em;vertical-align:top;position:relative;top:.12em;color:var(--brand);margin-left:2px}
+.nums a>span{display:block;margin-top:12px;font-weight:700;font-size:15px}
+.nums small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.nums a:hover>span{color:var(--brand-text)}
+
+/* ---------- 빨간 띠: 다음 토론회 (15 포스터) ---------- */
+.band-red{background:var(--brand);color:#fff;margin-top:56px;overflow:hidden}
+@media(min-width:768px){.band-red{margin-top:96px}}
+.fx{display:grid;gap:22px;padding:48px 0 52px}
+@media(min-width:1024px){.fx{grid-template-columns:auto minmax(0,1fr);gap:72px;padding:88px 0;align-items:end}}
+.fx .kick{color:#fff}
+.fx .kick i{background:#fff}
+.fx .dd{font-family:var(--disp);font-stretch:62%;font-weight:900;font-size:136px;line-height:.78;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:18px}
+@media(min-width:1024px){.fx .dd{font-size:260px;margin-top:22px}}
+.fx .when{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.fx .when span{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid rgba(255,255,255,.55);border-radius:999px;font-size:13px;font-weight:700}
+.fx .when .dday{background:#fff;color:var(--brand-text);border-color:#fff}
+.fx h3{margin:0 0 12px;font-size:28px;line-height:1.22;letter-spacing:-.05em;font-weight:900}
+@media(min-width:768px){.fx h3{font-size:48px;line-height:1.12}}
+.fx p{margin:0 0 24px;color:rgba(255,255,255,.88);font-size:16px;max-width:560px}
+.btn-w{background:#fff;color:var(--ink)}
+.btn-w:hover{background:var(--ink);color:#fff}
+
+/* 구독 띠: 종이색 (8) */
+.subband{background:var(--paper);border-radius:3px;border-top:3px solid var(--ink)}
+.subband h3{font-weight:900;letter-spacing:-.05em}
+@media(min-width:768px){.subband h3{font-size:40px}}
+
+/* 바닥: 먹색 + 큰 워드마크 (17) */
+.ft{background:var(--ink);color:#BDBDBD;border-top:0;margin-top:56px;overflow:hidden}
+.ft h4{color:#fff}
+.ft .links a{color:#fff}
+.ft .meta{color:#9A9A9A}
+.ft .chk a{color:#fff}
+.ft .err{color:var(--red-on-ink)}
+.ft .btn-d{background:var(--brand);color:#fff}
+.ft .btn-d:hover{background:var(--brand-hover)}
+.ft .inp{border-color:#3A3A3A}
+.wm{font-weight:900;letter-spacing:-.07em;line-height:.9;color:#fff;font-size:clamp(52px,14.2vw,212px);margin:48px 0 0;white-space:nowrap;user-select:none}
+.wm em{font-style:normal;color:var(--brand)}
+
+/* 움직임: 스크롤 등장, 형광펜 긋기, 숫자 세기. 움직임 줄이기 설정이면 끄기 */
+.motion .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.motion .rv.in{opacity:1;transform:none}
+.motion .rv.d1{transition-delay:.08s}.motion .rv.d2{transition-delay:.16s}.motion .rv.d3{transition-delay:.24s}
+.motion .mk.draw{background-size:0 100%;transition:background-size 1s cubic-bezier(.6,0,.2,1) .35s}
+.motion .mk.draw.in{background-size:100% 100%}
+@media(prefers-reduced-motion:reduce){.stamp svg{animation:none}.pf .im img{transition:none}}
 </style>
 </head>
 <body>
@@ -504,7 +691,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 
 <header class="hd" id="hd">
   <div class="wrap">
-    <a class="logo" href="#/" aria-label="○○소비자연대 처음으로"><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13V3h4.5a3.2 3.2 0 0 1 0 6.4H3" stroke="#fff" stroke-width="2"/><circle cx="12.4" cy="12" r="1.8" fill="#6E93FF"/></svg></i><span>○○소비자연대 <small>예시</small></span></a>
+    <a class="logo" href="#/" aria-label="○○소비자연대 처음으로"><i><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13V3h4.5a3.2 3.2 0 0 1 0 6.4H3" stroke="#fff" stroke-width="2"/><circle cx="12.4" cy="12" r="1.8" fill="#FF6B5E"/></svg></i><span>○○소비자연대 <small>예시</small></span></a>
     <nav class="nav" aria-label="주 메뉴">
       <a href="#/about" data-nav="about">단체소개</a>
       <a href="#/press" data-nav="press">보도자료·성명</a>
@@ -573,6 +760,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
         <p class="meta" style="margin-top:12px">이 화면은 제안용 데모예요. 실제 단체와 관계없어요. 사진: Unsplash (무료 라이선스)</p>
       </div>
     </div>
+    <div class="wm" aria-hidden="true">○○소비자연대<em>.</em></div>
   </div>
 </footer>
 
@@ -583,12 +771,12 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 const CATS=[{id:'ai',name:'AI'},{id:'tel',name:'통신'},{id:'plat',name:'플랫폼·문화'},{id:'car',name:'자동차'},{id:'food',name:'식품·과학'},{id:'soc',name:'사회'}];
 const catName=id=>(CATS.find(c=>c.id===id)||{}).name||'';
 const TAGS={
- '통신비':{title:'5G 요금제, 쓰는 만큼 내고 있나',desc:'휴대폰 이용자 절반 이상이 기본 제공 데이터를 다 쓰지 못한다는 조사를 바탕으로, 남는 데이터 이월과 중간 요금제를 요구하고 있어요.'},
- 'AI약관':{title:'내가 쓴 글이 AI 학습에 쓰인다면',desc:'생성형 AI 서비스 약관에서 입력 데이터 학습 동의가 기본으로 켜져 있는지, 끄는 방법은 쉬운지 살펴봤어요.'},
- '배달수수료':{title:'배달비는 누가 내고 있나',desc:'중개 수수료와 배달비가 메뉴 가격에 어떻게 옮겨붙는지, 같은 메뉴의 매장 가격과 앱 가격을 비교했어요.'},
- '급발진입증':{title:'운전자가 결함을 증명해야 하는 구조',desc:'차량 급발진 의심 사고에서 입증 책임을 제조사로 옮기는 법 개정을 요구하고 있어요.'},
- '구독해지':{title:'가입은 한 번에, 해지는 다섯 번에',desc:'OTT·음악·쇼핑 멤버십의 해지 단계 수를 세어 보고, 가입만큼 쉬운 해지를 요구했어요.'},
- '식품표시':{title:'제로 음료, 표시만 보고 고를 수 있나',desc:'감미료 종류와 함량 표시가 제품마다 달라 비교가 어려운 문제를 다뤄요.'}
+ '통신비':{hl:'쓰는 만큼',title:'5G 요금제, 쓰는 만큼 내고 있나',desc:'휴대폰 이용자 절반 이상이 기본 제공 데이터를 다 쓰지 못한다는 조사를 바탕으로, 남는 데이터 이월과 중간 요금제를 요구하고 있어요.'},
+ 'AI약관':{hl:'AI 학습',title:'내가 쓴 글이 AI 학습에 쓰인다면',desc:'생성형 AI 서비스 약관에서 입력 데이터 학습 동의가 기본으로 켜져 있는지, 끄는 방법은 쉬운지 살펴봤어요.'},
+ '배달수수료':{hl:'누가 내고',title:'배달비는 누가 내고 있나',desc:'중개 수수료와 배달비가 메뉴 가격에 어떻게 옮겨붙는지, 같은 메뉴의 매장 가격과 앱 가격을 비교했어요.'},
+ '급발진입증':{hl:'증명해야',title:'운전자가 결함을 증명해야 하는 구조',desc:'차량 급발진 의심 사고에서 입증 책임을 제조사로 옮기는 법 개정을 요구하고 있어요.'},
+ '구독해지':{hl:'다섯 번에',title:'가입은 한 번에, 해지는 다섯 번에',desc:'OTT·음악·쇼핑 멤버십의 해지 단계 수를 세어 보고, 가입만큼 쉬운 해지를 요구했어요.'},
+ '식품표시':{hl:'표시만 보고',title:'제로 음료, 표시만 보고 고를 수 있나',desc:'감미료 종류와 함량 표시가 제품마다 달라 비교가 어려운 문제를 다뤄요.'}
 };
 let activeTags=['통신비','AI약관','배달수수료','급발진입증','구독해지'];
 const TODAY='2026-10-22'; // 데모 기준 날짜
@@ -692,63 +880,106 @@ function itemsForTag(t){
 
 /* ---------- 화면: 처음 ---------- */
 let curTag=null;
-function viewHome(){
+/* 3차: 신문 1면 구성 — 이슈 머리(큰 제목+형광펜, 흑백 사진+도장+검정 카드) → 검정 띠 보도자료 → 큰 숫자 → 빨간 띠 토론회 */
+function markTitle(t,h){t=esc(t);if(!h)return t;const k=esc(h);return t.includes(k)?t.replace(k,`<mark class="mk draw">${k}</mark>`):t}
+function viewHome(quiet){
   if(!activeTags.includes(curTag))curTag=activeTags[0];
   const T=TAGS[curTag]||{title:'',desc:''};const items=itemsForTag(curTag);const past=items.filter(i=>i.date<=TODAY);
   const posts=[...POSTS].sort(byNew);const feat=posts[0];
   const nf=FORUMS.filter(f=>f.status==='up').sort((a,b)=>a.date.localeCompare(b.date))[0];
   const libs=[...LIB].sort(byNew);
+  const tagLib=LIB.filter(l=>l.tags.includes(curTag)).sort(byNew)[0];
+  const top=past[0];const rest=items.filter(i=>i!==top).slice(0,4);
+  const ring='REPORT · 소비자보고서 · REPORT · 소비자보고서 · ';
+  const n=x=>quiet?x:`<span data-count="${x}">${x}</span>`;
   app.innerHTML=`
   <div class="wrap">
-    <section class="issue" aria-labelledby="issueH">
-      <p class="lab" id="issueH">지금 다루는 이슈</p>
+    <section class="hx" aria-labelledby="issueH">
+      <p class="kick" id="issueH"><i></i>지금 다루는 이슈<span class="rule"></span><span class="n">ISSUE ${String(activeTags.indexOf(curTag)+1).padStart(2,'0')} / ${String(activeTags.length).padStart(2,'0')}</span></p>
       <div class="chips" role="tablist" aria-label="이슈 해시태그">${activeTags.map(t=>`<button class="chip" role="tab" aria-selected="${t===curTag}" data-tag="${t}">#${t}</button>`).join('')}</div>
-      <div class="lead">
+      <div class="hx-grid">
         <div class="txt">
-          <span class="tagbig">#${curTag}</span>
-          <h1 class="big">${esc(T.title)}</h1>
-          <p class="desc">${esc(T.desc)}</p>
-          <div class="stat"><div><b>${items.length}</b><span>이 이슈로 쓴 글·자료</span></div><div><b>${past[0]?fmt(past[0].date).slice(5):'-'}</b><span>마지막 글</span></div></div>
-          <ul class="relist" aria-label="#${curTag} 관련 글">
-          ${items.slice(0,4).map(i=>`<li><a href="${i.href}"><span class="meta"><span class="kind">${i.kind}</span><span class="dot"></span><span class="num">${fmt(i.date)}</span></span><span class="t">${esc(i.title)}</span></a></li>`).join('')||'<li class="meta" style="padding:16px 0">아직 이 이슈로 쓴 글이 없어요.</li>'}
-          </ul>
-          ${items.length>4?`<a class="all" href="#/search?q=${encodeURIComponent(curTag)}">#${curTag} 글 ${items.length}건 모두 보기</a>`:''}
+          <h1 class="rv">${markTitle(T.title,T.hl)}</h1>
+          <p class="desc rv d1">${esc(T.desc)}</p>
+          <div class="hx-stat rv d2">
+            <div><b>${n(items.length)}<em>건</em></b><span>이 이슈로 쓴 글·자료</span></div>
+            <div><b>${top?fmt(top.date).slice(5):'-'}</b><span>마지막 글</span></div>
+            <div><b>${nf?dday(nf.date):'-'}</b><span>다음 토론회</span></div>
+          </div>
         </div>
-        <figure class="hero-ph"><img src="${PH(TAGIMG[curTag]||CATIMG.tel,1400)}" alt="${esc(TAGCAP[curTag]||curTag)} 관련 사진" fetchpriority="high"><span class="cap">#${curTag} · ${esc(TAGCAP[curTag]||'')}</span><span class="credit">사진 Unsplash</span></figure>
+        <figure class="hx-ph rv d1">
+          <div class="im"><img src="${PH(TAGIMG[curTag]||CATIMG.tel,1200)}" alt="${esc(TAGCAP[curTag]||curTag)} 관련 사진" fetchpriority="high"><span class="credit">사진 Unsplash</span></div>
+          ${tagLib?`<a class="stamp" href="#/read/${tagLib.id}" aria-label="관련 보고서 바로 읽기: ${esc(tagLib.title)}"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ringP" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#ringP">${ring}</textPath></text></svg><b>보고서<br>바로 읽기</b></a>`:''}
+          ${top?`<a class="hx-card" href="${top.href}"><span class="kick"><i></i>최신 · ${top.kind}<span class="rule" style="opacity:.25"></span><span class="n">${fmt(top.date)}</span></span><span class="t">${esc(top.title)}</span></a>`:''}
+        </figure>
+      </div>
+      <div class="tick" aria-label="#${curTag} 관련 글">
+        ${rest.map((i,k)=>`<a class="rv d${k}" href="${i.href}"><span class="kick"><b>${i.kind}</b><span class="n">${fmt(i.date)}</span></span><span class="t">${esc(i.title)}</span></a>`).join('')||`<p class="empty-row">이 이슈로 쓴 다른 글은 아직 없어요.</p>`}
+      </div>
+      <a class="tick-all" href="#/search?q=${encodeURIComponent(curTag)}"><span>#${curTag} 글·자료 ${items.length}건 모두 보기</span>${IC.right}</a>
+    </section>
+  </div>
+
+  <section class="band-ink" aria-labelledby="pressH">
+    <div class="wrap">
+      <div class="bh"><div><p class="kick"><i></i>Press · Statement<span class="n">&nbsp;· ${POSTS.length}건</span></p><h2 id="pressH" class="rv">보도자료·성명</h2></div><a class="btn btn-o btn-lg" href="#/press">전체 보기</a></div>
+      <div class="chips chips-dk" aria-label="분야 바로가기">${CATS.map(c=>`<a class="chip" href="#/press?cat=${c.id}">${c.name}<span class="n">${POSTS.filter(p=>p.cat===c.id).length}</span></a>`).join('')}</div>
+      <div class="pg">
+        <a class="pf rv" href="#/post/${feat.id}"><span class="im"><img src="${PH(CATIMG[feat.cat],1200)}" alt="" loading="lazy"><span class="credit">사진 Unsplash</span></span><span class="meta"><span class="kd">${feat.kind}</span>${catName(feat.cat)}<span class="num">· ${fmt(feat.date)}</span></span><span class="t">${esc(feat.title)}</span><p>${esc(feat.sum)}</p></a>
+        <div class="prs">${posts.slice(1,6).map((p,k)=>`<a class="pr rv d${Math.min(k,3)}" href="#/post/${p.id}"><span class="d">${fmt(p.date).slice(5)}<small>${p.date.slice(0,4)}</small></span><span><span class="c">${catName(p.cat)} <span>· ${p.kind}</span></span><span class="t">${esc(p.title)}</span></span></a>`).join('')}</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="nb" aria-labelledby="numH">
+      <div class="nb-h"><div><p class="kick"><i></i>숫자로 보는 활동<span class="rule"></span><span class="n">2026 · 예시</span></p><h2 id="numH" class="rv">조사하고, 발표하고,<br>바뀔 때까지 묻습니다</h2></div><p class="rv d1">모든 숫자는 이 데모에 들어 있는 글 수를 그대로 센 거예요. 실제 사이트에서는 글을 올리면 저절로 바뀌어요.</p></div>
+      <div class="nums">
+        <a class="rv" href="#/press"><b>${n(POSTS.length)}</b><span>보도자료·성명</span><small>6개 분야</small></a>
+        <a class="rv d1" href="#/library"><b>${n(LIB.length)}</b><span>보고서·정책자료</span><small>모두 ${LIB.reduce((a,l)=>a+l.pages,0)}쪽</small></a>
+        <a class="rv d2" href="#/forum"><b>${n(FORUMS.length)}</b><span>토론회·포럼</span><small>예정 ${FORUMS.filter(f=>f.status==='up').length}건</small></a>
+        <a class="rv d3" href="#/subscribe"><b>${n(subCount)}<sup>+</sup></b><span>보도자료 받는 기자</span><small>예시 숫자</small></a>
       </div>
     </section>
+  </div>
 
-    <section aria-labelledby="pressH">
-      <div class="shd"><h2 id="pressH">보도자료·성명</h2><a class="more" href="#/press">전체 보기</a></div>
-      <div class="press">
-        <a class="feat" href="#/post/${feat.id}"><span class="fph"><img src="${PH(CATIMG[feat.cat],1000)}" alt="" loading="lazy"><span class="credit">사진 Unsplash</span></span><span class="meta"><span class="badge">${feat.kind}</span><span class="cat">${catName(feat.cat)}</span><span class="dot"></span><span class="num">${fmt(feat.date)}</span></span><div class="t">${esc(feat.title)}</div><p>${esc(feat.sum)}</p></a>
-        <div>
-          <div class="chips" style="margin-bottom:12px" aria-label="분야 바로가기">${CATS.map(c=>`<a class="chip" href="#/press?cat=${c.id}">${c.name}</a>`).join('')}</div>
-          <div class="hlist">${posts.slice(1,5).map(homeRow).join('')}</div>
-        </div>
-      </div>
-    </section>
+  ${nf?`<section class="band-red" aria-labelledby="forumH"><div class="wrap"><div class="fx">
+    <div><p class="kick"><i></i>Next Forum<span class="rule"></span></p><div class="dd rv">${fmt(nf.date).slice(5)}</div></div>
+    <div class="rv d1"><div class="when"><span class="dday">${dday(nf.date)}</span><span>${wday(nf.date)} · ${ampm(nf.time)}</span><span>${esc(nf.place)}</span></div><h3 id="forumH">${esc(nf.title)}</h3><p>${esc(nf.sum)}</p><a class="btn btn-w btn-lg" href="#/forum/${nf.id}">토론회 자세히 보기</a></div>
+  </div></div></section>`:''}
 
-    ${nf?`<section aria-label="다음 토론회"><div class="forumband">
-      <div class="dd">${fmt(nf.date).slice(5)}<small>${wday(nf.date)} · ${ampm(nf.time)}</small></div>
-      <div><span class="meta" style="color:#C9CED6">다음 토론회 · ${dday(nf.date)} · ${esc(nf.place)}</span><h3>${esc(nf.title)}</h3><p>${esc(nf.sum)}</p></div>
-      <a class="btn btn-s btn-lg" href="#/forum/${nf.id}">토론회 자세히 보기</a>
-    </div></section>`:''}
-
+  <div class="wrap">
     <section aria-labelledby="libH">
       <div class="shd"><h2 id="libH">자료실</h2><a class="more" href="#/library">전체 보기</a></div>
       <div class="lib">
-        <a class="libbig" href="#/read/${libs[0].id}">${coverHTML(libs[0])}<span><span class="meta">${LTYPE[libs[0].type]}<span class="dot"></span><span class="num">${libs[0].pages}쪽</span></span><span style="display:block;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.02em;margin-top:4px">${esc(libs[0].title)}</span></span></a>
+        <a class="libbig rv" href="#/read/${libs[0].id}">${coverHTML(libs[0])}<span><span class="meta">${LTYPE[libs[0].type]}<span class="dot"></span><span class="num">${libs[0].pages}쪽</span></span><span style="display:block;font-size:20px;font-weight:800;line-height:1.4;letter-spacing:-.03em;margin-top:4px">${esc(libs[0].title)}</span></span></a>
         <div style="border-top:1px solid var(--line)">${libs.slice(1,5).map(libRow).join('')}</div>
       </div>
     </section>
 
-    <section style="padding-top:0"><div class="subband">
+    <section style="padding-top:0"><div class="subband rv">
       <div><h3>기자님께는 보도자료를 바로 보내 드려요</h3><p>이메일과 소속만 남기면, 새 보도자료가 올라갈 때 자동으로 메일이 가요. 지금 ${subCount}명이 받고 있어요(예시).</p></div>
       <a class="btn btn-p btn-lg" href="#/subscribe">기자 전용 구독 신청</a>
     </div></section>
   </div>`;
+  fx(quiet);
 }
+/* 스크롤 등장·숫자 세기 (움직임 줄이기면 건너뜀) */
+const MOTION=!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;
+if(MOTION)document.documentElement.classList.add('motion');
+let fxObs;
+function fx(quiet){
+  if(!MOTION)return;
+  fxObs&&fxObs.disconnect();
+  const els=app.querySelectorAll('.rv,.mk.draw,[data-count]');
+  if(quiet){els.forEach(e=>e.classList.add('in'));return}
+  fxObs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');fxObs.unobserve(el);
+    if(el.dataset.count){const to=+el.dataset.count,t0=performance.now();const step=t=>{const k=Math.min(1,(t-t0)/900);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};el.textContent='0';requestAnimationFrame(step)}
+  }),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>fxObs.observe(e));
+}
+/* 바로 아래로 건너뛴 경우(앵커·키보드 End)에도 위쪽 요소가 숨지 않게 */
+if(MOTION){let tk=0;addEventListener('scroll',()=>{if(tk)return;tk=requestAnimationFrame(()=>{tk=0;app.querySelectorAll('.rv:not(.in),.mk.draw:not(.in)').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.92)e.classList.add('in')})})},{passive:true})}
 function wday(d){return '일월화수목금토'[new Date(d+'T00:00:00').getDay()]+'요일'}
 function ampm(t){const [h,m]=t.split(':').map(Number);return (h<12?'오전 ':'오후 ')+((h%12)||12)+':'+String(m).padStart(2,'0')}
 function dday(d){const t=new Date(TODAY+'T00:00:00');const x=new Date(d+'T00:00:00');const n=Math.round((x-t)/864e5);return n>0?'D-'+n:n===0?'오늘':'지난 토론회'}
@@ -775,7 +1006,7 @@ function chartSVG(){
   const w=600,h=230,bw=72,gap=(w-60-bw*5)/4;
   return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="기본 데이터 사용 비율별 이용자 분포 막대그래프" style="width:100%;height:auto;font-family:inherit">
    ${[0,10,20,30].map(v=>`<line x1="40" x2="${w}" y1="${190-v*5}" y2="${190-v*5}" stroke="#E5E8EB" stroke-dasharray="3 3"/><text x="30" y="${194-v*5}" font-size="12" fill="#636D7B" text-anchor="end">${v}%</text>`).join('')}
-   ${d.map((x,i)=>{const X=60+i*(bw+gap),H=x[1]*5;return `<rect x="${X}" y="${190-H}" width="${bw}" height="${H}" rx="8" fill="${i<3?'#2457F5':'#D9E4FF'}"/><text x="${X+bw/2}" y="${182-H}" font-size="14" font-weight="700" text-anchor="middle" fill="#191F28">${x[1]}%</text><text x="${X+bw/2}" y="${212}" font-size="12" text-anchor="middle" fill="#636D7B">${x[0]}</text>`}).join('')}
+   ${d.map((x,i)=>{const X=60+i*(bw+gap),H=x[1]*5;return `<rect x="${X}" y="${190-H}" width="${bw}" height="${H}" rx="8" fill="${i<3?'#D7261E':'#F6CFCB'}"/><text x="${X+bw/2}" y="${182-H}" font-size="14" font-weight="700" text-anchor="middle" fill="#191F28">${x[1]}%</text><text x="${X+bw/2}" y="${212}" font-size="12" text-anchor="middle" fill="#636D7B">${x[0]}</text>`}).join('')}
   </svg>`;
 }
 function bodyRich(){return `
@@ -1113,7 +1344,7 @@ addEventListener('hashchange',route);
 
 /* 공통 클릭 */
 document.addEventListener('click',e=>{
-  const t=e.target.closest('[data-tag]');if(t){curTag=t.dataset.tag;const y=scrollY;viewHome();scrollTo(0,y);const nb=document.querySelector(`[data-tag="${curTag}"]`);nb&&nb.focus();return}
+  const t=e.target.closest('[data-tag]');if(t){curTag=t.dataset.tag;const y=scrollY;viewHome(1);scrollTo(0,y);const nb=document.querySelector(`[data-tag="${curTag}"]`);nb&&nb.focus();return}
   if(e.target.closest('[data-dl]')){toast('실제 사이트에서는 PDF 원본을 내려받아요');return}
   if(e.target.closest('[data-copy]')){try{navigator.clipboard.writeText(location.href)}catch(_){ }toast('글 주소를 복사했어요');return}
   if(e.target.closest('[data-print]')){toast('인쇄하면 메뉴 없이 본문만 나와요(실제 사이트)');return}
