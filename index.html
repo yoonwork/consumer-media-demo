@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23191F28'/%3E%3Cpath d='M9 22V10h5.5a4 4 0 0 1 0 8H9' stroke='%23fff' stroke-width='2.6' fill='none'/%3E%3Ccircle cx='23' cy='21' r='2.6' fill='%23D7261E'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,400&display=swap">
 <style id="tokens">
 :root{
   color-scheme: light;
@@ -16,10 +16,10 @@
   --brand:#D7261E; --brand-hover:#B91F18; --brand-press:#9C1A14; --brand-text:#B91F18;
   --brand-tint:#FCEBE9; --brand-tint-2:#F6CFCB; --ring:0 0 0 3px rgba(215,38,30,.28); --on-brand:#FFFFFF;
   --red-on-ink:#FF6B5E;
-  --bg:#FFFFFF; --card:#FFFFFF; --soft:#F6F5F2; --track:#F1EFEB; --line:#E4E2DD; --line-2:#EEECE8; --paper:#F3F0E8;
-  --ink:#111111; --ink-2:#3D3D3D; --mut:#6B6B6B; --mut-2:#A3A3A3; --rule:#111111;
+  --bg:#F7F4EE; --card:#FFFFFF; --soft:#F1ECE3; --track:#ECE6DB; --line:#E0D9CC; --line-2:#EAE4D8; --paper:#EFE8DC;
+  --ink:#111111; --ink-2:#36332F; --mut:#57534D; --mut-2:#A3A3A3; --rule:#111111;
   --hl:#FFE14D;
-  --disp:"Archivo",var(--font);
+  --disp:"Fraunces",Georgia,serif;
   --ok:#127A4F; --ok-bg:#E3F6ED; --ok-dot:#1FA971;
   --warn:#7A5600; --warn-bg:#FFF3D4; --warn-dot:#F2B01E;
   --bad:#BF2930; --bad-bg:#FFE3E4; --bad-dot:#E5484D;
@@ -68,13 +68,13 @@ button{cursor:pointer}
 .ibtn:hover{background:var(--track)}
 .ibtn svg{width:22px;height:22px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:var(--r-pill);border:1px solid transparent;font-weight:600;font-size:15px;white-space:nowrap;transition:background .15s}
-.btn-p{background:var(--brand);color:#fff}
-.btn-p:hover{background:var(--brand-hover)} .btn-p:active{background:var(--brand-press)}
+.btn-p{background:var(--ink);color:#fff}
+.btn-p:hover{background:#2E2B27} .btn-p:active{background:#000}
 .btn-p[disabled]{background:var(--mut-2);cursor:not-allowed}
 .btn-s{background:var(--card);border-color:var(--line);color:var(--ink)}
 .btn-s:hover{background:var(--soft)}
 .btn-d{background:var(--ink);color:#fff}
-.btn-d:hover{background:#2c3440}
+.btn-d:hover{background:#2E2B27}
 .btn-lg{height:52px;font-size:17px;padding:0 24px}
 .hd .sub{display:none}
 @media(min-width:1024px){.nav{display:flex}.hd .menu{display:none}.hd .sub{display:inline-flex}}
@@ -203,7 +203,7 @@ section{padding:40px 0}
 .lib{display:grid;gap:24px}
 @media(min-width:1024px){.lib{grid-template-columns:4fr 8fr;gap:48px}}
 .cover{aspect-ratio:1/1.414;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;padding:9%;display:flex;flex-direction:column;container-type:inline-size;box-shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06)}
-.cover .ty{font-size:4.6cqw;font-weight:600;color:var(--brand-text)}
+.cover .ty{font-size:4.6cqw;font-weight:700;color:var(--ink-2)}
 .cover h4{font-size:9cqw;line-height:1.22;letter-spacing:-.03em;margin:6cqw 0 0;font-weight:700}
 .cover .cimg{flex:1;min-height:0;margin:7cqw 0 6cqw;border-radius:2cqw;background:var(--track) center/cover no-repeat}
 .cover .bar{margin-top:auto;border-top:2px solid var(--ink);padding-top:3cqw;font-size:4cqw;color:var(--mut);display:flex;justify-content:space-between}
@@ -331,7 +331,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .pgx h2{font-size:4.2cqw;margin:0 0 2.4cqw;letter-spacing:-.03em;line-height:1.3}
 .pgx h3{font-size:2.8cqw;margin:3cqw 0 1.2cqw}
 .pgx p{margin:0 0 1.8cqw}
-.pgx .foot{position:absolute;left:9cqw;right:9cqw;bottom:4.5cqw;display:flex;justify-content:space-between;font-size:1.7cqw;color:#888;border-top:1px solid #ddd;padding-top:1.2cqw}
+.pgx .foot{position:absolute;left:9cqw;right:9cqw;bottom:4.5cqw;display:flex;justify-content:space-between;font-size:1.7cqw;color:#5E5E5E;border-top:1px solid #ddd;padding-top:1.2cqw}
 .pgx.cv .pgi{display:flex;flex-direction:column;padding:12cqw 10cqw}
 .pgx.cv .ty{font-size:2.6cqw;font-weight:600;color:var(--brand-text)}
 .pgx.cv h1{font-size:7.4cqw;line-height:1.2;letter-spacing:-.04em;margin:10cqw 0 4cqw}
@@ -502,188 +502,192 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,24px);background:var(--ink);color:#fff;padding:14px 20px;border-radius:var(--r-md);font-size:15px;z-index:80;opacity:0;pointer-events:none;transition:all .2s;width:max-content;max-width:calc(100vw - 32px);box-shadow:var(--sh-pop)}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
-/* ================= 3차 디자인: 감시 보도 신문 톤 =================
-   무드보드: refs3/consumer/moodboard.jpg (번호는 디자인검토.md '3차 방향' 참고) */
-/* 머리: 흰 바탕, 현재 메뉴는 빨간 밑줄 (17 ProPublica) */
-.hd{background:#fff;border-bottom:1px solid var(--ink)}
+/* ================= 4차 디자인: 밝고 차분한 크림 + 사진 카드 =================
+   지침: wishket/_디자인4차_지침.md (인테리어 쇼핑 시안 방향). 빨강은 작은 점·분야 글자·D-day에만 */
+.hd{background:rgba(247,244,238,.96);border-bottom:1px solid var(--line)}
 .logo{font-weight:800;letter-spacing:-.04em;font-size:18px}
-.logo i{border-radius:4px}
-.nav a{border-radius:0;font-weight:600;color:var(--ink)}
-.nav a:hover{background:transparent;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
-.nav a[aria-current="page"]{background:transparent;box-shadow:none;text-decoration:underline;text-decoration-color:var(--brand);text-underline-offset:8px;text-decoration-thickness:3px}
-/* 구역 머리: 굵고 크게 (4·8) */
-.shd{border-top:3px solid var(--rule);padding-top:14px;margin-bottom:24px}
-.shd h2{font-size:30px;font-weight:900;letter-spacing:-.05em}
-@media(min-width:768px){.shd h2{font-size:48px;line-height:1.1}}
-.badge{border-radius:3px;background:var(--brand-tint);color:var(--brand-text)}
-.cover{border-radius:3px}
-.cover .bar{border-top-width:3px}
-.lib .cover .cimg{filter:grayscale(1) contrast(1.05)}
+.logo i{border-radius:8px}
+.nav a{font-weight:600;color:var(--ink-2)}
+.nav a:hover{background:var(--track);color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--ink);color:#fff;box-shadow:none}
+.btn{font-weight:700}
+.btn-sm{height:44px;font-size:14px;padding:0 18px}
+.btn-s{background:#fff;border-color:var(--line)}
+.btn-s:hover{background:var(--soft)}
+.shd{border-top:0;padding-top:0;margin-bottom:24px;align-items:center}
+.shd h2{font-size:28px;font-weight:800;letter-spacing:-.04em}
+@media(min-width:768px){.shd h2{font-size:40px;line-height:1.15}}
+.badge{border-radius:999px}
+.cover{border-radius:10px;border-color:var(--line)}
+.chip{border-color:var(--line);background:#fff;color:var(--ink)}
+.chip[aria-pressed="true"],.chip[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.card,.pane,.rel,.attach{border-color:var(--line-2);border-radius:20px}
+.credit{background:rgba(17,17,17,.72);color:#fff}
 
-/* 공통 꼬리표: 고정폭 느낌 대문자 (18 Rest of World, 19 The Pudding) */
-.kick{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);line-height:1}
-.kick i{width:8px;height:8px;border-radius:50%;background:var(--brand);flex:none}
-.kick .rule{flex:1;height:1px;background:currentColor;opacity:.9}
-.kick .n{font-variant-numeric:tabular-nums}
-.disp{font-family:var(--disp);font-stretch:75%;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+/* 꼬리표: 작은 글자 + 빨간 점 하나 */
+.kick{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--ink-2);line-height:1.2;margin:0}
+.kick i{width:7px;height:7px;border-radius:50%;background:var(--brand);flex:none}
+.kick .n{font-variant-numeric:tabular-nums;color:var(--mut);font-weight:600}
+.en{font-family:var(--disp);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.serifnum{font-family:var(--disp);font-weight:400;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
 
-/* ---------- 첫 화면: 이슈 ---------- */
-.hx{padding:24px 0 0}
-@media(min-width:1024px){.hx{padding:40px 0 0}}
-.hx .chips{margin-top:16px}
-.hx .chip{font-weight:700;color:var(--ink);border-color:#CFCCC5}
-.hx .chip[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
-.hx-grid{display:grid;gap:24px;margin-top:20px}
-@media(min-width:1024px){.hx-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;margin-top:28px;align-items:start}}
-@media(max-width:1023px){.hx-grid>.txt{display:contents}.hx h1{order:1}.hx-ph{order:2;margin-bottom:8px}.hx .desc{order:3}.hx-stat{order:4;margin-top:0}}
-.hx h1{font-size:42px;line-height:1.1;letter-spacing:-.06em;font-weight:900;margin:0 0 18px}
-@media(min-width:768px){.hx h1{font-size:72px;line-height:1.04}}
-@media(min-width:1280px){.hx h1{font-size:92px}}
-/* 형광펜 (2): 글자 아래쪽만 칠하고, 처음 그릴 때 왼쪽에서 오른쪽으로 */
-.mk{background:linear-gradient(transparent 60%,var(--hl) 60%,var(--hl) 94%,transparent 94%) no-repeat 0 0/100% 100%;color:inherit;padding:0 .05em;margin:0 -.05em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.hx .desc{font-size:17px;line-height:1.7;color:var(--ink-2);max-width:580px;margin:0}
-@media(min-width:768px){.hx .desc{font-size:19px}}
-/* 숫자 세 개 + 세로줄 (14·20) */
-.hx-stat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px;border-top:3px solid var(--ink);padding-top:16px;max-width:620px}
-.hx-stat>div{padding:0 14px;border-left:1px solid var(--line)}
-.hx-stat>div:first-child{padding-left:0;border-left:0}
-.hx-stat b{display:block;font-family:var(--disp);font-stretch:75%;font-weight:800;font-size:44px;line-height:.92;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
-@media(min-width:768px){.hx-stat>div{padding:0 26px}.hx-stat b{font-size:76px}}
-.hx-stat b em{font-style:normal;color:var(--brand)}
-.hx-stat>div>span{display:block;font-size:13px;color:var(--mut);margin-top:10px;font-weight:500}
-/* 큰 흑백 사진 + 겹치는 빨간 도장 + 검정 카드 (1·5·6 겹침, 16 흑백) */
-.hx-ph{position:relative;margin:4px 0 0}
-.hx-ph .im{position:relative;aspect-ratio:4/3;overflow:hidden;background:#2a2a2a;border-radius:3px}
-@media(min-width:1024px){.hx-ph{margin-top:8px}.hx-ph .im{aspect-ratio:4/5}}
-.hx-ph .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.06)}
-.hx-ph .credit{top:10px;bottom:auto}
-.stamp{position:absolute;z-index:3;right:12px;top:-30px;width:104px;height:104px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 10px 30px rgba(17,17,17,.25)}
-@media(min-width:1024px){.stamp{width:144px;height:144px;left:-64px;right:auto;top:48px}}
-.stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
-.stamp svg text{font-family:var(--disp);font-size:9.6px;font-weight:700;letter-spacing:.2em;fill:#fff;text-transform:uppercase}
-.stamp b{position:relative;font-size:13px;line-height:1.3;font-weight:800;letter-spacing:-.02em}
-@media(min-width:1024px){.stamp b{font-size:16px}}
-.stamp:hover{background:var(--brand-hover)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hx-card{position:relative;z-index:2;display:block;background:var(--ink);color:#fff;padding:18px 20px 20px;margin:-44px 14px 0;border-radius:3px;box-shadow:0 18px 40px rgba(17,17,17,.22)}
-@media(min-width:1024px){.hx-card{position:absolute;margin:0;left:-88px;right:40px;bottom:-36px;padding:22px 26px 24px}}
-.hx-card .kick{color:#fff}
-.hx-card .kick i{background:var(--red-on-ink)}
-.hx-card .t{display:block;font-size:18px;font-weight:700;line-height:1.42;letter-spacing:-.02em;margin-top:10px}
-@media(min-width:1024px){.hx-card .t{font-size:20px}}
-.hx-card:hover .t{text-decoration:underline;text-underline-offset:4px}
-/* 관련 글 띠: 신문 1면 아래 기사 줄 (3) */
-.tick{display:grid;margin-top:36px;border-top:3px solid var(--ink)}
-@media(min-width:768px){.tick{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:88px}}
-.tick a{display:block;padding:16px 0 18px;border-bottom:1px solid var(--line)}
-@media(min-width:768px){.tick a{padding:18px 22px 4px;border-bottom:0;border-left:1px solid var(--line)}.tick a:first-child{border-left:0;padding-left:0}}
-.tick .kick{font-size:11px;color:var(--mut)}
-.tick .kick b{color:var(--brand-text);font-weight:700}
-.tick .t{display:block;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-.02em;margin-top:10px}
-.tick a:hover .t{text-decoration:underline;text-underline-offset:3px}
-.tick-all{display:flex;justify-content:space-between;align-items:center;min-height:52px;margin-top:8px;font-weight:700;border-bottom:1px solid var(--line)}
-@media(min-width:768px){.tick-all{margin-top:24px}}
-.tick-all:hover{color:var(--brand-text)}
-.empty-row{padding:18px 0;color:var(--mut);font-size:15px}
+/* 구역 바탕: 크림 / 흰색 / 연베이지 번갈아 */
+.sx{padding:56px 0}
+@media(min-width:768px){.sx{padding:104px 0}}
+.bg-w{background:#fff}
+.bg-b{background:var(--paper)}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+@media(min-width:768px){.sh{margin-bottom:40px}}
+.sh .en{display:block;font-size:20px;color:var(--mut);margin-bottom:6px}
+@media(min-width:768px){.sh .en{font-size:24px}}
+.sh h2{margin:0;font-size:30px;line-height:1.2;letter-spacing:-.045em;font-weight:800}
+@media(min-width:768px){.sh h2{font-size:44px}}
+.sh p{margin:10px 0 0;color:var(--ink-2);font-size:16px;max-width:560px}
 
-/* ---------- 검정 띠: 보도자료·성명 (1·17 흑백 대비) ---------- */
-.band-ink{background:var(--ink);color:#fff;padding:56px 0 64px;margin-top:64px}
-@media(min-width:768px){.band-ink{padding:96px 0 104px;margin-top:104px}}
-.bh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid #333}
-.bh .kick{color:#BDBDBD}
-.bh h2{font-size:44px;line-height:1;letter-spacing:-.06em;font-weight:900;margin:14px 0 0}
-@media(min-width:768px){.bh h2{font-size:88px}}
-.btn-o{background:transparent;border-color:rgba(255,255,255,.45);color:#fff}
-.btn-o:hover{background:#fff;color:var(--ink)}
-.chips-dk{margin-top:20px}
-.chips-dk .chip{background:transparent;border-color:#3A3A3A;color:#E8E8E8}
-.chips-dk .chip:hover{border-color:#fff;color:#fff}
-.chips-dk .chip .n{color:#8F8F8F;opacity:1}
-.pg{display:grid;gap:8px;margin-top:28px}
-@media(min-width:1024px){.pg{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;margin-top:40px}}
-.pf .im{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:3px;background:#222}
-.pf .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
-.pf:hover .im img{transform:scale(1.04);filter:grayscale(0)}
-.pf .meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;color:#A8A8A8}
-.pf .meta .kd{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:var(--brand);color:#fff;font-size:12px;font-weight:700}
-.pf .t{display:block;font-size:26px;line-height:1.28;font-weight:800;letter-spacing:-.045em;margin:12px 0 10px}
-@media(min-width:768px){.pf .t{font-size:40px;line-height:1.2}}
-.pf:hover .t{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
-.pf p{color:#A8A8A8;margin:0;font-size:16px}
-.prs{border-top:1px solid #333}
-@media(min-width:1024px){.prs{border-top:0}}
-.pr{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid #2E2E2E;align-items:start}
-@media(min-width:1024px){.pr:first-child{padding-top:0}}
-.pr .d{font-family:var(--disp);font-stretch:75%;font-weight:800;font-size:30px;line-height:.95;font-variant-numeric:tabular-nums}
-.pr .d small{display:block;font-size:12px;font-weight:600;font-stretch:100%;letter-spacing:.1em;color:#8F8F8F;margin-top:6px}
-.pr .c{font-size:13px;font-weight:700;color:var(--red-on-ink)}
-.pr .c span{color:#8F8F8F;font-weight:500}
-.pr .t{display:block;font-size:17px;font-weight:700;line-height:1.45;letter-spacing:-.02em;margin-top:4px;color:#fff}
+/* ---------- 첫 화면 ---------- */
+.hx{padding:28px 0 56px}
+@media(min-width:1024px){.hx{padding:40px 0 104px}}
+.hx-top{display:flex;flex-direction:column;gap:14px}
+@media(min-width:1024px){.hx-top{flex-direction:row;align-items:center;justify-content:space-between}}
+.hx .chips{margin-top:0}
+.hx .chip{font-weight:700}
+.hx-head{display:grid;gap:14px;margin:28px 0 24px}
+@media(min-width:1024px){.hx-head{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end;margin:32px 0 28px}}
+.hx h1{font-size:34px;line-height:1.2;letter-spacing:-.05em;font-weight:800;margin:0}
+@media(min-width:768px){.hx h1{font-size:52px;line-height:1.15}}
+.mk{background:linear-gradient(transparent 66%,#F5D3CC 66%,#F5D3CC 94%,transparent 94%) no-repeat 0 0/100% 100%;color:inherit;padding:0 .04em;margin:0 -.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hx .desc{font-size:16px;line-height:1.75;color:var(--ink-2);margin:0 0 18px}
+@media(min-width:768px){.hx .desc{font-size:17px}}
+.hx .acts{display:flex;gap:8px;flex-wrap:wrap}
+.hx-meta{display:flex;align-items:center;flex-wrap:wrap;margin:14px 0 0;font-size:14px;font-weight:600;color:var(--ink-2)}
+.hx-main{display:grid;gap:16px}
+@media(min-width:1024px){.hx-main{grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:20px}}
+.hx-ph{position:relative;margin:0;border-radius:20px;overflow:hidden;background:var(--track);aspect-ratio:4/3}
+@media(min-width:768px){.hx-ph{border-radius:24px;aspect-ratio:16/8}}
+@media(min-width:1024px){.hx-ph{aspect-ratio:auto;min-height:420px}}
+.hx-latest{background:#fff;border-radius:20px;padding:18px 20px 6px}
+@media(min-width:768px){.hx-latest{border-radius:24px;padding:22px 24px 8px}}
+.hx-latest .lh{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--line-2)}
+.hx-latest h2{margin:0;font-size:16px;font-weight:800;letter-spacing:-.02em}
+.hx-latest .lh a{font-size:14px;font-weight:700;min-height:44px;display:inline-flex;align-items:center;color:var(--ink-2)}
+.hx-latest .lh a:hover{text-decoration:underline}
+.lr{display:block;padding:14px 0;border-bottom:1px solid var(--line-2)}
+.lr:last-child{border-bottom:0}
+.lr .lm{display:flex;align-items:center;flex-wrap:wrap;font-size:13px;font-weight:600;color:var(--mut)}
+.lr .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.02em;margin-top:4px}
+.lr:hover .t{text-decoration:underline;text-underline-offset:3px}
+.hx-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hx-ph .credit{right:14px;bottom:14px}
+.hx-stat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border-radius:20px;margin-top:16px;padding:18px 4px}
+@media(min-width:768px){.hx-stat{margin-top:20px;padding:26px 8px;border-radius:24px}}
+.hx-stat>div{padding:0 14px;border-left:1px solid var(--line-2)}
+.hx-stat>div:first-child{border-left:0}
+@media(min-width:768px){.hx-stat>div{padding:0 32px}}
+.hx-stat b{display:block;font-family:var(--disp);font-weight:400;font-size:30px;line-height:1.05;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+@media(min-width:768px){.hx-stat b{font-size:48px}}
+.hx-stat b em{font-style:normal;font-family:var(--font);font-size:.5em;font-weight:700;color:var(--mut);margin-left:3px}
+.hx-stat>div>span{display:block;font-size:13px;color:var(--mut);margin-top:6px;font-weight:600}
+
+/* ---------- 이 이슈 모아 보기: 사진 카드 (큰 것 1 + 작은 것 2) ---------- */
+.bento{display:grid;gap:16px}
+@media(min-width:768px){.bento{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px}}
+.bento .side{display:grid;gap:16px}
+@media(min-width:768px){.bento .side{gap:24px}}
+.pc{display:flex;flex-direction:column;background:var(--bg);border-radius:20px;overflow:hidden;min-width:0}
+@media(min-width:768px){.pc{border-radius:24px}}
+.pc .im{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:var(--track)}
+.pc .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pc:hover .im img{transform:scale(1.03)}
+.pc .tx{display:block;padding:18px 20px 22px}
+@media(min-width:768px){.pc .tx{padding:22px 26px 26px}}
+.pc .meta{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mut);font-weight:600}
+.pc .meta b{color:var(--ink);font-weight:700}
+.pc .t{display:block;font-size:17px;font-weight:700;line-height:1.45;letter-spacing:-.025em;margin-top:8px}
+.pc:hover .t{text-decoration:underline;text-underline-offset:3px}
+@media(min-width:768px){.pc.big .im{aspect-ratio:4/3}.pc.big .t{font-size:24px;line-height:1.38}.bento .side .pc .im{aspect-ratio:auto;flex:1;min-height:150px}}
+.morebar{display:flex;justify-content:center;margin-top:32px}
+
+/* ---------- 보도자료·성명 ---------- */
+.chips-c{margin:0 0 24px}
+.pg{display:grid;gap:16px}
+@media(min-width:1024px){.pg{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px}}
+.pf{display:block;background:#fff;border-radius:20px;overflow:hidden}
+@media(min-width:768px){.pf{border-radius:24px}}
+.pf .im{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--track)}
+.pf .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pf:hover .im img{transform:scale(1.03)}
+.pf .tx{display:block;padding:20px 20px 24px}
+@media(min-width:768px){.pf .tx{padding:28px 32px 32px}}
+.pf .meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:var(--mut);font-size:13px;font-weight:600}
+.pf .meta .kd{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;font-weight:700}
+.pf .t{display:block;font-size:22px;line-height:1.35;font-weight:800;letter-spacing:-.04em;margin:12px 0 8px}
+@media(min-width:768px){.pf .t{font-size:30px;line-height:1.3}}
+.pf:hover .t{text-decoration:underline;text-underline-offset:5px}
+.pf p{color:var(--ink-2);margin:0;font-size:16px}
+.prs{background:#fff;border-radius:20px;padding:4px 20px}
+@media(min-width:768px){.prs{border-radius:24px;padding:8px 28px}}
+.pr{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;padding:18px 0;border-bottom:1px solid var(--line-2);align-items:start}
+.pr:last-child{border-bottom:0}
+.pr .d{font-family:var(--disp);font-weight:400;font-size:26px;line-height:1;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+.pr .d small{display:block;font-family:var(--font);font-size:12px;font-weight:600;color:var(--mut);margin-top:6px;letter-spacing:0}
+.pr .c{font-size:13px;font-weight:700;color:var(--ink)}
+.pr .c span{color:var(--mut);font-weight:600}
+.pr .t{display:block;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-.02em;margin-top:4px;color:var(--ink)}
 .pr:hover .t{text-decoration:underline;text-underline-offset:3px}
 
-/* ---------- 숫자로 보는 활동 (6·14·20 큰 숫자) ---------- */
-.nb{padding:56px 0 8px}
-@media(min-width:768px){.nb{padding:96px 0 24px}}
-.nb-h{display:grid;gap:12px;margin-bottom:28px}
-@media(min-width:1024px){.nb-h{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end;margin-bottom:40px}}
-.nb-h h2{margin:12px 0 0;font-size:32px;line-height:1.15;letter-spacing:-.055em;font-weight:900}
-@media(min-width:768px){.nb-h h2{font-size:56px}}
-.nb-h p{margin:0;color:var(--ink-2);font-size:16px}
-.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:3px solid var(--ink)}
-@media(min-width:768px){.nums{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.nums a{display:block;padding:18px 16px 22px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
-.nums a:nth-child(odd){border-left:0;padding-left:0}
-@media(min-width:768px){.nums a{border-bottom:0;padding:22px 24px 8px}.nums a:nth-child(odd){border-left:1px solid var(--line);padding-left:24px}.nums a:first-child{border-left:0;padding-left:0}}
-.nums b{display:block;font-family:var(--disp);font-stretch:75%;font-weight:900;font-size:76px;line-height:.85;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-@media(min-width:768px){.nums b{font-size:132px}}
-.nums b sup{font-size:.36em;vertical-align:top;position:relative;top:.12em;color:var(--brand);margin-left:2px}
-.nums a>span{display:block;margin-top:12px;font-weight:700;font-size:15px}
-.nums small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
-.nums a:hover>span{color:var(--brand-text)}
+/* ---------- 숫자 + 다음 토론회 ---------- */
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:56px}
+@media(min-width:768px){.nums{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-bottom:88px}}
+.nums a{display:block;padding:18px 18px 20px;background:var(--bg);border-radius:18px}
+@media(min-width:768px){.nums a{background:transparent;border-radius:0;padding:4px 28px 8px;border-left:1px solid var(--line)}.nums a:first-child{border-left:0;padding-left:0}}
+.nums b{display:block;font-family:var(--disp);font-weight:300;font-size:56px;line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
+@media(min-width:768px){.nums b{font-size:88px}}
+.nums b sup{font-size:.4em;vertical-align:top;position:relative;top:.15em;color:var(--mut);margin-left:2px}
+.nums a>span{display:block;margin-top:10px;font-weight:700;font-size:15px}
+.nums small{display:block;color:var(--mut);font-size:13px;margin-top:2px;font-weight:500}
+.nums a:hover>span{text-decoration:underline;text-underline-offset:3px}
+.fxc{display:grid;gap:0;background:var(--paper);border-radius:20px;overflow:hidden}
+@media(min-width:1024px){.fxc{grid-template-columns:minmax(0,6fr) minmax(0,6fr);border-radius:24px}}
+.fxc .im{position:relative;aspect-ratio:16/10;background:var(--track)}
+@media(min-width:1024px){.fxc .im{aspect-ratio:auto;min-height:440px}}
+.fxc .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fxc .tx{padding:24px 20px 28px;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:768px){.fxc .tx{padding:48px 56px}}
+.fxc .dd{font-family:var(--disp);font-weight:300;font-size:64px;line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums;margin:14px 0 18px}
+@media(min-width:768px){.fxc .dd{font-size:96px}}
+.fxc .when{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.fxc .when span{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid #CFC6B8;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink-2);background:rgba(255,255,255,.6)}
+.fxc .when .dday{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
+.fxc h3{margin:0 0 10px;font-size:24px;line-height:1.3;letter-spacing:-.04em;font-weight:800}
+@media(min-width:768px){.fxc h3{font-size:30px}}
+.fxc p{margin:0 0 24px;color:var(--ink-2);font-size:16px}
+.fxc .btn{align-self:flex-start}
 
-/* ---------- 빨간 띠: 다음 토론회 (15 포스터) ---------- */
-.band-red{background:var(--brand);color:#fff;margin-top:56px;overflow:hidden}
-@media(min-width:768px){.band-red{margin-top:96px}}
-.fx{display:grid;gap:22px;padding:48px 0 52px}
-@media(min-width:1024px){.fx{grid-template-columns:auto minmax(0,1fr);gap:72px;padding:88px 0;align-items:end}}
-.fx .kick{color:#fff}
-.fx .kick i{background:#fff}
-.fx .dd{font-family:var(--disp);font-stretch:62%;font-weight:900;font-size:136px;line-height:.78;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:18px}
-@media(min-width:1024px){.fx .dd{font-size:260px;margin-top:22px}}
-.fx .when{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.fx .when span{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid rgba(255,255,255,.55);border-radius:999px;font-size:13px;font-weight:700}
-.fx .when .dday{background:#fff;color:var(--brand-text);border-color:#fff}
-.fx h3{margin:0 0 12px;font-size:28px;line-height:1.22;letter-spacing:-.05em;font-weight:900}
-@media(min-width:768px){.fx h3{font-size:48px;line-height:1.12}}
-.fx p{margin:0 0 24px;color:rgba(255,255,255,.88);font-size:16px;max-width:560px}
-.btn-w{background:#fff;color:var(--ink)}
-.btn-w:hover{background:var(--ink);color:#fff}
+/* 자료실·구독 */
+.lib .cover .cimg{filter:none}
+.libbig .cover{background:#fff}
+.ln{border-bottom-color:var(--line)}
+.subband{background:#fff;border-radius:24px;border:0;margin-top:56px}
+@media(min-width:768px){.subband{margin-top:88px}}
+.subband h3{font-weight:800;letter-spacing:-.04em}
 
-/* 구독 띠: 종이색 (8) */
-.subband{background:var(--paper);border-radius:3px;border-top:3px solid var(--ink)}
-.subband h3{font-weight:900;letter-spacing:-.05em}
-@media(min-width:768px){.subband h3{font-size:40px}}
+/* 바닥: 연베이지 뉴스레터 + 얇은 검정 한 줄 */
+.ft{background:#fff;color:var(--ink-2);border-top:0;margin-top:0;padding:56px 0}
+@media(min-width:768px){.ft{padding:72px 0}}
+.ft h4{color:var(--ink)}
+.ft .links a{color:var(--ink)}
+.ft .meta{color:var(--mut)}
+.ft .inp{background:#fff}
+.ftbar{background:var(--ink);color:#D6D2CB;font-size:13px;line-height:1.5;padding:14px 0 calc(14px + env(safe-area-inset-bottom))}
+.ftbar .wrap{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between}
 
-/* 바닥: 먹색 + 큰 워드마크 (17) */
-.ft{background:var(--ink);color:#BDBDBD;border-top:0;margin-top:56px;overflow:hidden}
-.ft h4{color:#fff}
-.ft .links a{color:#fff}
-.ft .meta{color:#9A9A9A}
-.ft .chk a{color:#fff}
-.ft .err{color:var(--red-on-ink)}
-.ft .btn-d{background:var(--brand);color:#fff}
-.ft .btn-d:hover{background:var(--brand-hover)}
-.ft .inp{border-color:#3A3A3A}
-.wm{font-weight:900;letter-spacing:-.07em;line-height:.9;color:#fff;font-size:clamp(52px,14.2vw,212px);margin:48px 0 0;white-space:nowrap;user-select:none}
-.wm em{font-style:normal;color:var(--brand)}
-
-/* 움직임: 스크롤 등장, 형광펜 긋기, 숫자 세기. 움직임 줄이기 설정이면 끄기 */
-.motion .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+/* 움직임: 스크롤 등장만, 움직임 줄이기면 끄기 */
+.motion .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .motion .rv.in{opacity:1;transform:none}
 .motion .rv.d1{transition-delay:.08s}.motion .rv.d2{transition-delay:.16s}.motion .rv.d3{transition-delay:.24s}
 .motion .mk.draw{background-size:0 100%;transition:background-size 1s cubic-bezier(.6,0,.2,1) .35s}
 .motion .mk.draw.in{background-size:100% 100%}
-@media(prefers-reduced-motion:reduce){.stamp svg{animation:none}.pf .im img{transition:none}}
+@media(prefers-reduced-motion:reduce){.pc .im img,.pf .im img{transition:none}}
 </style>
 </head>
 <body>
@@ -760,9 +764,9 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
         <p class="meta" style="margin-top:12px">이 화면은 제안용 데모예요. 실제 단체와 관계없어요. 사진: Unsplash (무료 라이선스)</p>
       </div>
     </div>
-    <div class="wm" aria-hidden="true">○○소비자연대<em>.</em></div>
   </div>
 </footer>
+<div class="ftbar" role="contentinfo"><div class="wrap"><span>© ○○소비자연대 (예시) · 제안용 데모</span><span>사진 Unsplash 무료 라이선스</span></div></div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -782,9 +786,9 @@ let activeTags=['통신비','AI약관','배달수수료','급발진입증','구�
 const TODAY='2026-10-22'; // 데모 기준 날짜
 /* 사진: Unsplash 무료 라이선스 (images.unsplash.com 직접 링크) */
 const PH=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
-const TAGIMG={'통신비':'1600087626014-e652e18bbff2','AI약관':'1563986768609-322da13575f3','배달수수료':'1526367790999-0150786686a2','급발진입증':'1549317661-bd32c8ce0db2','구독해지':'1593359677879-a4bb92f829d1','식품표시':'1534723452862-4c874018d66d'};
+const TAGIMG={'통신비':'1600087626014-e652e18bbff2','AI약관':'1563986768609-322da13575f3','배달수수료':'1526367790999-0150786686a2','급발진입증':'1449965408869-eaa3f722e40d','구독해지':'1512428559087-560fa5ceab42','식품표시':'1534723452862-4c874018d66d'};
 const TAGCAP={'통신비':'휴대폰 요금','AI약관':'AI 서비스 약관','배달수수료':'배달 가격','급발진입증':'급발진 의심 사고','구독해지':'구독 서비스 해지','식품표시':'식품 표시'};
-const CATIMG={tel:'1601972599720-36938d4ecd31',ai:'1498050108023-c5249f4df085',plat:'1617347454431-f49d7ff5c3b1',car:'1503376780353-7e6692767b70',food:'1542838132-92c53300491e',soc:'1556740738-b6a63e27c4df'};
+const CATIMG={tel:'1601972599720-36938d4ecd31',ai:'1498050108023-c5249f4df085',plat:'1617347454431-f49d7ff5c3b1',car:'1485291571150-772bcfc10da5',food:'1542838132-92c53300491e',soc:'1556740738-b6a63e27c4df'};
 
 let POSTS=[
  {id:101,kind:'보도자료',cat:'tel',date:'2026-10-21',tags:['통신비'],title:'5G 이용자 57%, 기본 데이터 절반도 못 써… 남는 데이터 이월 의무화해야',sum:'이용자 1,200명 설문(예시)에서 절반 넘게 기본 제공량의 50% 미만을 썼어요. 이월·중간 요금제 확대를 요구해요.',rich:true,lib:301},
@@ -871,16 +875,22 @@ function pressRow(p,q){return `<a class="li" href="#/post/${p.id}"><span class="
 function hl(s,q){s=esc(s);if(!q)return s;const k=esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return s.replace(new RegExp(k,'gi'),m=>`<mark class="hit">${m}</mark>`)}
 function itemsForTag(t){
   const a=[];
-  POSTS.filter(p=>p.tags.includes(t)).forEach(p=>a.push({kind:p.kind,date:p.date,title:p.title,href:'#/post/'+p.id}));
-  CARDS.filter(c=>c.tags.includes(t)).forEach(c=>a.push({kind:'카드뉴스',date:c.date,title:c.title,href:'#/card/'+c.id}));
-  FORUMS.filter(f=>f.tags.includes(t)).forEach(f=>a.push({kind:f.date>TODAY?'토론회 예정':'토론회',date:f.date,title:f.title,href:'#/forum/'+f.id}));
-  LIB.filter(l=>l.tags.includes(t)).forEach(l=>a.push({kind:LTYPE[l.type],date:l.date,title:l.title,href:'#/read/'+l.id}));
+  POSTS.filter(p=>p.tags.includes(t)).forEach(p=>a.push({kind:p.kind,cat:p.cat,date:p.date,title:p.title,href:'#/post/'+p.id}));
+  CARDS.filter(c=>c.tags.includes(t)).forEach(c=>a.push({kind:'카드뉴스',cat:c.cat,date:c.date,title:c.title,href:'#/card/'+c.id}));
+  FORUMS.filter(f=>f.tags.includes(t)).forEach(f=>a.push({kind:f.date>TODAY?'토론회 예정':'토론회',cat:f.cat,date:f.date,title:f.title,href:'#/forum/'+f.id}));
+  LIB.filter(l=>l.tags.includes(t)).forEach(l=>a.push({kind:LTYPE[l.type],cat:l.cat,date:l.date,title:l.title,href:'#/read/'+l.id}));
   return a.sort(byNew);
 }
 
 /* ---------- 화면: 처음 ---------- */
 let curTag=null;
 /* 3차: 신문 1면 구성 — 이슈 머리(큰 제목+형광펜, 흑백 사진+도장+검정 카드) → 검정 띠 보도자료 → 큰 숫자 → 빨간 띠 토론회 */
+/* 4차: 크림 바탕 — 이슈 탭 → 제목 → 화면 폭 사진 카드 → 숫자 / 이슈 사진 카드(흰 바탕) / 보도자료(크림) / 숫자·토론회(흰 바탕) / 자료실(연베이지) */
+const KINDIMG={'카드뉴스':'1586892477838-2b96e85e0f96','토론회':'1540575467063-178a50c2df87','토론회 예정':'1505373877841-8d25f7d46678'};
+const LIBIMG='1554224155-6726b3ff858f';
+const ALTIMG=['1504711434969-e33886168f5c','1556742049-0cfed4f6a45d','1607082348824-0a96f2a4b9da','1450101499163-c8848c66ca85','1472851294608-062f824d29cc'];
+function pickImgs(list,used){return list.map(i=>{let id=KINDIMG[i.kind]||(i.href.startsWith('#/read/')?LIBIMG:CATIMG[i.cat]);if(!id||used.has(id))id=ALTIMG.find(a=>!used.has(a))||id;used.add(id);return id})}
+function wd(d){return '일월화수목금토'[new Date(d+'T00:00:00').getDay()]}
 function markTitle(t,h){t=esc(t);if(!h)return t;const k=esc(h);return t.includes(k)?t.replace(k,`<mark class="mk draw">${k}</mark>`):t}
 function viewHome(quiet){
   if(!activeTags.includes(curTag))curTag=activeTags[0];
@@ -889,79 +899,79 @@ function viewHome(quiet){
   const nf=FORUMS.filter(f=>f.status==='up').sort((a,b)=>a.date.localeCompare(b.date))[0];
   const libs=[...LIB].sort(byNew);
   const tagLib=LIB.filter(l=>l.tags.includes(curTag)).sort(byNew)[0];
-  const top=past[0];const rest=items.filter(i=>i!==top).slice(0,4);
-  const ring='REPORT · 소비자보고서 · REPORT · 소비자보고서 · ';
+  const top=past[0];
+  const heroId=TAGIMG[curTag]||CATIMG.tel;
+  const pick=items.slice(0,3);const imgs=pickImgs(pick,new Set([heroId,CATIMG[feat.cat]]));
   const n=x=>quiet?x:`<span data-count="${x}">${x}</span>`;
+  const pcard=(i,k,big)=>`<a class="pc${big?' big':''} rv d${k}" href="${i.href}"><span class="im"><img src="${PH(imgs[k],big?1100:700)}" alt="" loading="lazy"></span><span class="tx"><span class="meta"><b>${i.kind}</b><span class="dot"></span><span class="num">${fmt(i.date)}</span></span><span class="t">${esc(i.title)}</span></span></a>`;
   app.innerHTML=`
   <div class="wrap">
     <section class="hx" aria-labelledby="issueH">
-      <p class="kick" id="issueH"><i></i>지금 다루는 이슈<span class="rule"></span><span class="n">ISSUE ${String(activeTags.indexOf(curTag)+1).padStart(2,'0')} / ${String(activeTags.length).padStart(2,'0')}</span></p>
-      <div class="chips" role="tablist" aria-label="이슈 해시태그">${activeTags.map(t=>`<button class="chip" role="tab" aria-selected="${t===curTag}" data-tag="${t}">#${t}</button>`).join('')}</div>
-      <div class="hx-grid">
-        <div class="txt">
-          <h1 class="rv">${markTitle(T.title,T.hl)}</h1>
-          <p class="desc rv d1">${esc(T.desc)}</p>
-          <div class="hx-stat rv d2">
-            <div><b>${n(items.length)}<em>건</em></b><span>이 이슈로 쓴 글·자료</span></div>
-            <div><b>${top?fmt(top.date).slice(5):'-'}</b><span>마지막 글</span></div>
-            <div><b>${nf?dday(nf.date):'-'}</b><span>다음 토론회</span></div>
-          </div>
-        </div>
-        <figure class="hx-ph rv d1">
-          <div class="im"><img src="${PH(TAGIMG[curTag]||CATIMG.tel,1200)}" alt="${esc(TAGCAP[curTag]||curTag)} 관련 사진" fetchpriority="high"><span class="credit">사진 Unsplash</span></div>
-          ${tagLib?`<a class="stamp" href="#/read/${tagLib.id}" aria-label="관련 보고서 바로 읽기: ${esc(tagLib.title)}"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ringP" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#ringP">${ring}</textPath></text></svg><b>보고서<br>바로 읽기</b></a>`:''}
-          ${top?`<a class="hx-card" href="${top.href}"><span class="kick"><i></i>최신 · ${top.kind}<span class="rule" style="opacity:.25"></span><span class="n">${fmt(top.date)}</span></span><span class="t">${esc(top.title)}</span></a>`:''}
-        </figure>
+      <div class="hx-top">
+        <p class="kick" id="issueH"><i></i>지금 다루는 이슈<span class="n">${activeTags.indexOf(curTag)+1} / ${activeTags.length}</span></p>
+        <div class="chips" role="tablist" aria-label="이슈 해시태그">${activeTags.map(t=>`<button class="chip" role="tab" aria-selected="${t===curTag}" data-tag="${t}">#${t}</button>`).join('')}</div>
       </div>
-      <div class="tick" aria-label="#${curTag} 관련 글">
-        ${rest.map((i,k)=>`<a class="rv d${k}" href="${i.href}"><span class="kick"><b>${i.kind}</b><span class="n">${fmt(i.date)}</span></span><span class="t">${esc(i.title)}</span></a>`).join('')||`<p class="empty-row">이 이슈로 쓴 다른 글은 아직 없어요.</p>`}
+      <div class="hx-head">
+        <div><h1 class="rv">${markTitle(T.title,T.hl)}</h1>${top?`<p class="hx-meta rv">최신&nbsp;<span class="num">${fmt(top.date)}(${wd(top.date)})</span><span class="dot"></span>${top.kind}</p>`:''}</div>
+        <div class="rv d1"><p class="desc">${esc(T.desc)}</p>
+          <div class="acts">${tagLib?`<a class="btn btn-d btn-sm" href="#/read/${tagLib.id}">보고서 바로 읽기</a>`:''}<a class="btn btn-s btn-sm" href="#/search?q=${encodeURIComponent(curTag)}">글·자료 ${items.length}건 보기</a></div></div>
       </div>
-      <a class="tick-all" href="#/search?q=${encodeURIComponent(curTag)}"><span>#${curTag} 글·자료 ${items.length}건 모두 보기</span>${IC.right}</a>
+      <div class="hx-main">
+        <figure class="hx-ph rv d1"><img src="${PH(heroId,1800)}" alt="${esc(TAGCAP[curTag]||curTag)} 관련 사진" fetchpriority="high"><span class="credit">사진 Unsplash</span></figure>
+        <aside class="hx-latest rv d2" aria-labelledby="latH"><div class="lh"><h2 id="latH">최신 보도자료</h2><a href="#/press">전체 보기</a></div>
+          ${posts.slice(0,3).map(p=>`<a class="lr" href="#/post/${p.id}"><span class="lm"><span class="num">${fmt(p.date)}(${wd(p.date)})</span><span class="dot"></span>${catName(p.cat)} · ${p.kind}</span><span class="t">${esc(p.title)}</span></a>`).join('')}
+        </aside>
+      </div>
+      <div class="hx-stat rv d2">
+        <div><b>${n(items.length)}<em>건</em></b><span>이 이슈로 쓴 글·자료</span></div>
+        <div><b>${top?fmt(top.date).slice(5):'-'}</b><span>마지막 글</span></div>
+        <div><b>${nf?dday(nf.date):'-'}</b><span>다음 토론회</span></div>
+      </div>
     </section>
   </div>
 
-  <section class="band-ink" aria-labelledby="pressH">
-    <div class="wrap">
-      <div class="bh"><div><p class="kick"><i></i>Press · Statement<span class="n">&nbsp;· ${POSTS.length}건</span></p><h2 id="pressH" class="rv">보도자료·성명</h2></div><a class="btn btn-o btn-lg" href="#/press">전체 보기</a></div>
-      <div class="chips chips-dk" aria-label="분야 바로가기">${CATS.map(c=>`<a class="chip" href="#/press?cat=${c.id}">${c.name}<span class="n">${POSTS.filter(p=>p.cat===c.id).length}</span></a>`).join('')}</div>
-      <div class="pg">
-        <a class="pf rv" href="#/post/${feat.id}"><span class="im"><img src="${PH(CATIMG[feat.cat],1200)}" alt="" loading="lazy"><span class="credit">사진 Unsplash</span></span><span class="meta"><span class="kd">${feat.kind}</span>${catName(feat.cat)}<span class="num">· ${fmt(feat.date)}</span></span><span class="t">${esc(feat.title)}</span><p>${esc(feat.sum)}</p></a>
-        <div class="prs">${posts.slice(1,6).map((p,k)=>`<a class="pr rv d${Math.min(k,3)}" href="#/post/${p.id}"><span class="d">${fmt(p.date).slice(5)}<small>${p.date.slice(0,4)}</small></span><span><span class="c">${catName(p.cat)} <span>· ${p.kind}</span></span><span class="t">${esc(p.title)}</span></span></a>`).join('')}</div>
-      </div>
+  <section class="sx bg-w" aria-labelledby="pickH"><div class="wrap">
+    <div class="sh"><div><span class="en">In this issue</span><h2 id="pickH" class="rv">#${curTag} 모아 보기</h2></div><a class="btn btn-d btn-sm" href="#/search?q=${encodeURIComponent(curTag)}">${items.length}건 모두 보기</a></div>
+    ${pick.length?`<div class="bento">${pcard(pick[0],0,true)}${pick.length>1?`<div class="side">${pick.slice(1).map((i,k)=>pcard(i,k+1)).join('')}</div>`:''}</div>`:`<p class="empty-row">이 이슈로 쓴 글은 아직 없어요.</p>`}
+  </div></section>
+
+  <section class="sx" aria-labelledby="pressH"><div class="wrap">
+    <div class="sh"><div><span class="en">Press &amp; Statements</span><h2 id="pressH" class="rv">보도자료·성명 <span class="num" style="font-size:.5em;color:var(--mut);font-weight:700;letter-spacing:0">${POSTS.length}건</span></h2></div><a class="btn btn-d btn-sm" href="#/press">전체 보기</a></div>
+    <div class="chips chips-c" aria-label="분야 바로가기"><a class="chip" aria-pressed="true" href="#/press">전체</a>${CATS.map(c=>`<a class="chip" href="#/press?cat=${c.id}">${c.name}<span class="n">${POSTS.filter(p=>p.cat===c.id).length}</span></a>`).join('')}</div>
+    <div class="pg">
+      <a class="pf rv" href="#/post/${feat.id}"><span class="im"><img src="${PH(CATIMG[feat.cat],1300)}" alt="" loading="lazy"><span class="credit">사진 Unsplash</span></span><span class="tx"><span class="meta"><span class="kd">${feat.kind}</span>${catName(feat.cat)}<span class="dot"></span><span class="num">${fmt(feat.date)}</span></span><span class="t">${esc(feat.title)}</span><p>${esc(feat.sum)}</p></span></a>
+      <div class="prs rv d1">${posts.slice(1,6).map(p=>`<a class="pr" href="#/post/${p.id}"><span class="d">${fmt(p.date).slice(5)}<small>${p.date.slice(0,4)}</small></span><span><span class="c">${catName(p.cat)} <span>· ${p.kind}</span></span><span class="t">${esc(p.title)}</span></span></a>`).join('')}</div>
     </div>
-  </section>
+  </div></section>
 
-  <div class="wrap">
-    <section class="nb" aria-labelledby="numH">
-      <div class="nb-h"><div><p class="kick"><i></i>숫자로 보는 활동<span class="rule"></span><span class="n">2026 · 예시</span></p><h2 id="numH" class="rv">조사하고, 발표하고,<br>바뀔 때까지 묻습니다</h2></div><p class="rv d1">모든 숫자는 이 데모에 들어 있는 글 수를 그대로 센 거예요. 실제 사이트에서는 글을 올리면 저절로 바뀌어요.</p></div>
-      <div class="nums">
-        <a class="rv" href="#/press"><b>${n(POSTS.length)}</b><span>보도자료·성명</span><small>6개 분야</small></a>
-        <a class="rv d1" href="#/library"><b>${n(LIB.length)}</b><span>보고서·정책자료</span><small>모두 ${LIB.reduce((a,l)=>a+l.pages,0)}쪽</small></a>
-        <a class="rv d2" href="#/forum"><b>${n(FORUMS.length)}</b><span>토론회·포럼</span><small>예정 ${FORUMS.filter(f=>f.status==='up').length}건</small></a>
-        <a class="rv d3" href="#/subscribe"><b>${n(subCount)}<sup>+</sup></b><span>보도자료 받는 기자</span><small>예시 숫자</small></a>
-      </div>
-    </section>
-  </div>
+  <section class="sx bg-w" aria-labelledby="numH"><div class="wrap">
+    <div class="sh"><div><span class="en">Our work in numbers</span><h2 id="numH" class="rv">조사하고, 발표하고, 바뀔 때까지 묻습니다</h2><p>이 데모에 들어 있는 글 수를 그대로 센 숫자예요(예시). 실제 사이트에서는 글을 올리면 저절로 바뀌어요.</p></div></div>
+    <div class="nums">
+      <a class="rv" href="#/press"><b>${n(POSTS.length)}</b><span>보도자료·성명</span><small>6개 분야</small></a>
+      <a class="rv d1" href="#/library"><b>${n(LIB.length)}</b><span>보고서·정책자료</span><small>모두 ${LIB.reduce((a,l)=>a+l.pages,0)}쪽</small></a>
+      <a class="rv d2" href="#/forum"><b>${n(FORUMS.length)}</b><span>토론회·포럼</span><small>예정 ${FORUMS.filter(f=>f.status==='up').length}건</small></a>
+      <a class="rv d3" href="#/subscribe"><b>${n(subCount)}<sup>+</sup></b><span>보도자료 받는 기자</span><small>예시 숫자</small></a>
+    </div>
+    ${nf?`<div class="fxc rv" aria-labelledby="forumH">
+      <div class="im"><img src="${PH(KINDIMG['토론회'],1200)}" alt="토론회 객석 사진" loading="lazy"><span class="credit">사진 Unsplash</span></div>
+      <div class="tx"><p class="kick"><i style="background:var(--ink)"></i>다음 토론회 <span class="en" style="font-size:15px;font-weight:400;color:var(--mut)">Next forum</span></p>
+        <div class="dd">${fmt(nf.date).slice(5)}</div>
+        <div class="when"><span class="dday">${dday(nf.date)}</span><span>${wday(nf.date)} · ${ampm(nf.time)}</span><span>${esc(nf.place)}</span></div>
+        <h3 id="forumH">${esc(nf.title)}</h3><p>${esc(nf.sum)}</p><a class="btn btn-d btn-sm" href="#/forum/${nf.id}">토론회 자세히 보기</a></div>
+    </div>`:''}
+  </div></section>
 
-  ${nf?`<section class="band-red" aria-labelledby="forumH"><div class="wrap"><div class="fx">
-    <div><p class="kick"><i></i>Next Forum<span class="rule"></span></p><div class="dd rv">${fmt(nf.date).slice(5)}</div></div>
-    <div class="rv d1"><div class="when"><span class="dday">${dday(nf.date)}</span><span>${wday(nf.date)} · ${ampm(nf.time)}</span><span>${esc(nf.place)}</span></div><h3 id="forumH">${esc(nf.title)}</h3><p>${esc(nf.sum)}</p><a class="btn btn-w btn-lg" href="#/forum/${nf.id}">토론회 자세히 보기</a></div>
-  </div></div></section>`:''}
-
-  <div class="wrap">
-    <section aria-labelledby="libH">
-      <div class="shd"><h2 id="libH">자료실</h2><a class="more" href="#/library">전체 보기</a></div>
-      <div class="lib">
-        <a class="libbig rv" href="#/read/${libs[0].id}">${coverHTML(libs[0])}<span><span class="meta">${LTYPE[libs[0].type]}<span class="dot"></span><span class="num">${libs[0].pages}쪽</span></span><span style="display:block;font-size:20px;font-weight:800;line-height:1.4;letter-spacing:-.03em;margin-top:4px">${esc(libs[0].title)}</span></span></a>
-        <div style="border-top:1px solid var(--line)">${libs.slice(1,5).map(libRow).join('')}</div>
-      </div>
-    </section>
-
-    <section style="padding-top:0"><div class="subband rv">
+  <section class="sx bg-b" aria-labelledby="libH"><div class="wrap">
+    <div class="sh"><div><span class="en">Library</span><h2 id="libH" class="rv">자료실</h2></div><a class="btn btn-d btn-sm" href="#/library">전체 보기</a></div>
+    <div class="lib">
+      <a class="libbig rv" href="#/read/${libs[0].id}">${coverHTML(libs[0])}<span><span class="meta">${LTYPE[libs[0].type]}<span class="dot"></span><span class="num">${libs[0].pages}쪽</span></span><span style="display:block;font-size:20px;font-weight:800;line-height:1.4;letter-spacing:-.03em;margin-top:4px">${esc(libs[0].title)}</span></span></a>
+      <div style="border-top:1px solid var(--line)">${libs.slice(1,5).map(libRow).join('')}</div>
+    </div>
+    <div class="subband rv">
       <div><h3>기자님께는 보도자료를 바로 보내 드려요</h3><p>이메일과 소속만 남기면, 새 보도자료가 올라갈 때 자동으로 메일이 가요. 지금 ${subCount}명이 받고 있어요(예시).</p></div>
-      <a class="btn btn-p btn-lg" href="#/subscribe">기자 전용 구독 신청</a>
-    </div></section>
-  </div>`;
+      <a class="btn btn-d btn-lg" href="#/subscribe">기자 전용 구독 신청</a>
+    </div>
+  </div></section>`;
   fx(quiet);
 }
 /* 스크롤 등장·숫자 세기 (움직임 줄이기면 건너뜀) */
@@ -1243,7 +1253,7 @@ function viewPrivacy(){
 
 /* ---------- 화면: 관리자 미리보기 ---------- */
 function viewAdmin(){
-  $('#hd').style.display='none';$('#ft').style.display='none';$('.demobar').style.display='none';
+  $('#hd').style.display='none';$('#ft').style.display='none';$('.ftbar').style.display='none';$('.demobar').style.display='none';
   const all=Object.keys(TAGS);
   app.innerHTML=`<div class="adm"><div class="admhd"><div class="wrap"><b>○○소비자연대 관리자 (미리보기)</b><span class="meta">실제는 워드프레스 관리자 화면이에요</span><span style="flex:1"></span><a class="btn" href="#/">사이트로 돌아가기</a></div></div>
   <div class="wrap">
@@ -1318,7 +1328,7 @@ function viewNF(){app.innerHTML=`<div class="wrap">${emptyHTML('찾는 화면이
 function route(){
   const h=location.hash.slice(1)||'/';const [path,query]=h.split('?');const qs=new URLSearchParams(query||'');const seg=path.split('/').filter(Boolean);
   document.body.style.overflow='';if(vObs){vObs.disconnect();vObs=null}
-  $('#hd').style.display='';$('#ft').style.display='';$('.demobar').style.display='';
+  $('#hd').style.display='';$('#ft').style.display='';$('.ftbar').style.display='';$('.demobar').style.display='';
   document.title='○○소비자연대 · 제안용 데모';
   const top=seg[0]||'';
   document.querySelectorAll('[data-nav]').forEach(a=>a.toggleAttribute('aria-current',a.dataset.nav===top)||a.dataset.nav===top&&a.setAttribute('aria-current','page'));
