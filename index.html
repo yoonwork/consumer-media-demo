@@ -241,7 +241,7 @@ section{padding:40px 0}
 .fld label,.fld .lbl{font-size:14px;font-weight:600}
 .req{color:var(--bad)}
 .opt{color:var(--mut);font-weight:500}
-.inp{height:48px;border:1px solid var(--line);border-radius:var(--r-md);padding:0 14px;font-size:15px;background:var(--card);width:100%;min-width:0}
+.inp{height:48px;border:1px solid #8F877B;border-radius:var(--r-md);padding:0 14px;font-size:15px;background:var(--card);width:100%;min-width:0}
 .inp:focus{outline:0;border-color:var(--brand);box-shadow:var(--ring)}
 .inp[aria-invalid="true"]{border-color:var(--bad)}
 textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
@@ -518,11 +518,11 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .shd h2{font-size:28px;font-weight:800;letter-spacing:-.04em}
 @media(min-width:768px){.shd h2{font-size:40px;line-height:1.15}}
 .badge{border-radius:999px}
-.cover{border-radius:10px;border-color:var(--line)}
+.cover{border-radius:8px;border-color:var(--line)}
 .chip{border-color:var(--line);background:#fff;color:var(--ink)}
 .chip[aria-pressed="true"],.chip[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 .card,.pane,.rel,.attach{border-color:var(--line-2);border-radius:20px}
-.credit{background:rgba(17,17,17,.72);color:#fff}
+.credit{background:rgba(17,17,17,.72);color:#fff;font-size:12px}
 
 /* 꼬리표: 작은 글자 + 빨간 점 하나 */
 .kick{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--ink-2);line-height:1.2;margin:0}
@@ -532,8 +532,8 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .serifnum{font-family:var(--disp);font-weight:400;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
 
 /* 구역 바탕: 크림 / 흰색 / 연베이지 번갈아 */
-.sx{padding:56px 0}
-@media(min-width:768px){.sx{padding:104px 0}}
+.sx{padding:64px 0}
+@media(min-width:768px){.sx{padding:120px 0}}
 .bg-w{background:#fff}
 .bg-b{background:var(--paper)}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
@@ -545,16 +545,16 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .sh p{margin:10px 0 0;color:var(--ink-2);font-size:16px;max-width:560px}
 
 /* ---------- 첫 화면 ---------- */
-.hx{padding:28px 0 56px}
-@media(min-width:1024px){.hx{padding:40px 0 104px}}
+.hx{padding:28px 0 64px}
+@media(min-width:1024px){.hx{padding:40px 0 120px}}
 .hx-top{display:flex;flex-direction:column;gap:14px}
 @media(min-width:1024px){.hx-top{flex-direction:row;align-items:center;justify-content:space-between}}
 .hx .chips{margin-top:0}
 .hx .chip{font-weight:700}
 .hx-head{display:grid;gap:14px;margin:28px 0 24px}
 @media(min-width:1024px){.hx-head{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:end;margin:32px 0 28px}}
-.hx h1{font-size:34px;line-height:1.2;letter-spacing:-.05em;font-weight:800;margin:0}
-@media(min-width:768px){.hx h1{font-size:52px;line-height:1.15}}
+.hx h1{font-size:30px;line-height:1.22;letter-spacing:-.02em;font-weight:800;margin:0}
+@media(min-width:768px){.hx h1{font-size:52px;line-height:1.18}}
 .mk{background:linear-gradient(transparent 66%,#F5D3CC 66%,#F5D3CC 94%,transparent 94%) no-repeat 0 0/100% 100%;color:inherit;padding:0 .04em;margin:0 -.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .hx .desc{font-size:16px;line-height:1.75;color:var(--ink-2);margin:0 0 18px}
 @media(min-width:768px){.hx .desc{font-size:17px}}
@@ -584,7 +584,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .hx-stat>div:first-child{border-left:0}
 @media(min-width:768px){.hx-stat>div{padding:0 32px}}
 .hx-stat b{display:block;font-family:var(--disp);font-weight:400;font-size:30px;line-height:1.05;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
-@media(min-width:768px){.hx-stat b{font-size:48px}}
+@media(min-width:768px){.hx-stat b{font-size:44px}}
 .hx-stat b em{font-style:normal;font-family:var(--font);font-size:.5em;font-weight:700;color:var(--mut);margin-left:3px}
 .hx-stat>div>span{display:block;font-size:13px;color:var(--mut);margin-top:6px;font-weight:600}
 
@@ -628,7 +628,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 @media(min-width:768px){.prs{border-radius:24px;padding:8px 28px}}
 .pr{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;padding:18px 0;border-bottom:1px solid var(--line-2);align-items:start}
 .pr:last-child{border-bottom:0}
-.pr .d{font-family:var(--disp);font-weight:400;font-size:26px;line-height:1;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+.pr .d{font-family:var(--disp);font-weight:400;font-size:24px;line-height:1;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
 .pr .d small{display:block;font-family:var(--font);font-size:12px;font-weight:600;color:var(--mut);margin-top:6px;letter-spacing:0}
 .pr .c{font-size:13px;font-weight:700;color:var(--ink)}
 .pr .c span{color:var(--mut);font-weight:600}
@@ -638,7 +638,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 /* ---------- 숫자 + 다음 토론회 ---------- */
 .nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:56px}
 @media(min-width:768px){.nums{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-bottom:88px}}
-.nums a{display:block;padding:18px 18px 20px;background:var(--bg);border-radius:18px}
+.nums a{display:block;padding:18px 18px 20px;background:var(--bg);border-radius:20px}
 @media(min-width:768px){.nums a{background:transparent;border-radius:0;padding:4px 28px 8px;border-left:1px solid var(--line)}.nums a:first-child{border-left:0;padding-left:0}}
 .nums b{display:block;font-family:var(--disp);font-weight:300;font-size:56px;line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
 @media(min-width:768px){.nums b{font-size:88px}}
@@ -654,7 +654,7 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .fxc .tx{padding:24px 20px 28px;display:flex;flex-direction:column;justify-content:center}
 @media(min-width:768px){.fxc .tx{padding:48px 56px}}
 .fxc .dd{font-family:var(--disp);font-weight:300;font-size:64px;line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums;margin:14px 0 18px}
-@media(min-width:768px){.fxc .dd{font-size:96px}}
+@media(min-width:768px){.fxc .dd{font-size:88px}}
 .fxc .when{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .fxc .when span{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid #CFC6B8;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink-2);background:rgba(255,255,255,.6)}
 .fxc .when .dday{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
@@ -667,9 +667,11 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .lib .cover .cimg{filter:none}
 .libbig .cover{background:#fff}
 .ln{border-bottom-color:var(--line)}
-.subband{background:#fff;border-radius:24px;border:0;margin-top:56px}
-@media(min-width:768px){.subband{margin-top:88px}}
+.subband{background:#fff;border-radius:20px;border:0;margin-top:56px}
+@media(min-width:768px){.subband{margin-top:88px;border-radius:24px}}
 .subband h3{font-weight:800;letter-spacing:-.04em}
+@media(min-width:768px){.subband h3{font-size:30px}}
+.subband p{max-width:40em}
 
 /* 바닥: 연베이지 뉴스레터 + 얇은 검정 한 줄 */
 .ft{background:#fff;color:var(--ink-2);border-top:0;margin-top:0;padding:56px 0}
@@ -678,6 +680,9 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
 .ft .links a{color:var(--ink)}
 .ft .meta{color:var(--mut)}
 .ft .inp{background:#fff}
+.nl-lb{display:block;margin-top:16px;font-size:14px;font-weight:700;color:var(--ink)}
+.nl-lb+.nl{margin-top:6px}
+.chk a{padding:14px 0}
 .ftbar{background:var(--ink);color:#D6D2CB;font-size:13px;line-height:1.5;padding:14px 0 calc(14px + env(safe-area-inset-bottom))}
 .ftbar .wrap{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between}
 
@@ -747,8 +752,8 @@ textarea.inp{height:auto;min-height:96px;padding:12px 14px;line-height:1.6}
       <div>
         <h4>뉴스레터 받기</h4>
         <p style="margin:0">한 달에 두 번, 새로 나온 보도자료와 보고서를 모아서 보내요. 언제든 끊을 수 있어요.</p>
+        <label class="nl-lb" for="nlEmail">이메일</label>
         <form class="nl" id="nlForm" novalidate>
-          <label class="sr" for="nlEmail">이메일</label>
           <input class="inp" id="nlEmail" type="email" placeholder="이메일 주소" autocomplete="email">
           <button class="btn btn-d btn-lg" type="submit" id="nlBtn">뉴스레터 구독하기</button>
         </form>
@@ -869,7 +874,7 @@ function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clea
 function kindChip(k){return `<span class="kind${k==='성명'?' sm':''}">${k}</span>`}
 function coverHTML(l){return `<div class="cover" aria-hidden="true"><div class="ty">${LTYPE[l.type]}</div><h4>${esc(shortTitle(l.title))}</h4><div class="cimg" style="background-image:url('${PH(CATIMG[l.cat],400)}')"></div><div class="bar"><span>○○소비자연대</span><span class="num">${fmt(l.date).slice(0,7)}</span></div></div>`}
 function shortTitle(t){return t.replace(/^(토론회 발제집|칼럼|소비자정책저널 제1호) — /,'')}
-function libRow(l){return `<div class="ln">${coverHTML(l)}<div><div class="meta">${LTYPE[l.type]}<span class="dot"></span>${catName(l.cat)}<span class="dot"></span><span class="num">${fmt(l.date)}</span><span class="dot"></span><span class="num">${l.pages}쪽</span></div><div class="t">${esc(l.title)}</div><div class="acts"><a class="btn btn-d" href="#/read/${l.id}">바로 읽기</a><button class="btn btn-s" data-dl>PDF 받기</button></div></div></div>`}
+function libRow(l){return `<div class="ln">${coverHTML(l)}<div><div class="meta">${LTYPE[l.type]}<span class="dot"></span>${catName(l.cat)}<span class="dot"></span><span class="num">${fmt(l.date)}</span><span class="dot"></span><span class="num">${l.pages}쪽</span></div><div class="t">${esc(l.title)}</div><div class="acts"><a class="btn btn-s" href="#/read/${l.id}">바로 읽기</a><button class="btn btn-s" data-dl>PDF 받기</button></div></div></div>`}
 function homeRow(p){return `<a class="hrow" href="#/post/${p.id}"><span><span class="meta"><span class="badge">${catName(p.cat)}</span>${p.kind}<span class="dot"></span><span class="num">${fmt(p.date)}</span></span><span class="t">${esc(p.title)}</span></span><span class="th"><img src="${PH(CATIMG[p.cat],320)}" alt="" loading="lazy"></span></a>`}
 function pressRow(p,q){return `<a class="li" href="#/post/${p.id}"><span class="d">${fmt(p.date)}</span><span><span class="cat">${catName(p.cat)}</span><span class="kmob"><span class="dot"></span>${p.kind}</span><span class="t" style="display:block;margin-top:2px">${hl(p.title,q)}</span>${q?`<span class="s">${hl(p.sum,q)}</span>`:''}</span><span class="kpc">${kindChip(p.kind)}</span></a>`}
 function hl(s,q){s=esc(s);if(!q)return s;const k=esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return s.replace(new RegExp(k,'gi'),m=>`<mark class="hit">${m}</mark>`)}
@@ -923,7 +928,7 @@ function viewHome(quiet){
         </aside>
       </div>
       <div class="hx-stat rv d2">
-        <div><b>${n(items.length)}<em>건</em></b><span>이 이슈로 쓴 글·자료</span></div>
+        <div><b>${n(items.length)}<em>건</em></b><span>이 이슈로 쓴 <span style="white-space:nowrap">글·자료</span></span></div>
         <div><b>${top?fmt(top.date).slice(5):'-'}</b><span>마지막 글</span></div>
         <div><b>${nf?dday(nf.date):'-'}</b><span>다음 토론회</span></div>
       </div>
@@ -931,12 +936,12 @@ function viewHome(quiet){
   </div>
 
   <section class="sx bg-w" aria-labelledby="pickH"><div class="wrap">
-    <div class="sh"><div><span class="en">In this issue</span><h2 id="pickH" class="rv">#${curTag} 모아 보기</h2></div><a class="btn btn-d btn-sm" href="#/search?q=${encodeURIComponent(curTag)}">${items.length}건 모두 보기</a></div>
+    <div class="sh"><div><span class="en">In this issue</span><h2 id="pickH" class="rv">#${curTag} 모아 보기</h2></div><a class="btn btn-s btn-sm" href="#/search?q=${encodeURIComponent(curTag)}">${items.length}건 모두 보기</a></div>
     ${pick.length?`<div class="bento">${pcard(pick[0],0,true)}${pick.length>1?`<div class="side">${pick.slice(1).map((i,k)=>pcard(i,k+1)).join('')}</div>`:''}</div>`:`<p class="empty-row">이 이슈로 쓴 글은 아직 없어요.</p>`}
   </div></section>
 
   <section class="sx" aria-labelledby="pressH"><div class="wrap">
-    <div class="sh"><div><span class="en">Press &amp; Statements</span><h2 id="pressH" class="rv">보도자료·성명 <span class="num" style="font-size:.5em;color:var(--mut);font-weight:700;letter-spacing:0">${POSTS.length}건</span></h2></div><a class="btn btn-d btn-sm" href="#/press">전체 보기</a></div>
+    <div class="sh"><div><span class="en">Press &amp; Statements</span><h2 id="pressH" class="rv">보도자료·성명 <span class="num" style="font-size:24px;color:var(--mut);font-weight:700;letter-spacing:0">${POSTS.length}건</span></h2></div><a class="btn btn-s btn-sm" href="#/press">전체 보기</a></div>
     <div class="chips chips-c" aria-label="분야 바로가기"><a class="chip" aria-pressed="true" href="#/press">전체</a>${CATS.map(c=>`<a class="chip" href="#/press?cat=${c.id}">${c.name}<span class="n">${POSTS.filter(p=>p.cat===c.id).length}</span></a>`).join('')}</div>
     <div class="pg">
       <a class="pf rv" href="#/post/${feat.id}"><span class="im"><img src="${PH(CATIMG[feat.cat],1300)}" alt="" loading="lazy"><span class="credit">사진 Unsplash</span></span><span class="tx"><span class="meta"><span class="kd">${feat.kind}</span>${catName(feat.cat)}<span class="dot"></span><span class="num">${fmt(feat.date)}</span></span><span class="t">${esc(feat.title)}</span><p>${esc(feat.sum)}</p></span></a>
@@ -945,7 +950,7 @@ function viewHome(quiet){
   </div></section>
 
   <section class="sx bg-w" aria-labelledby="numH"><div class="wrap">
-    <div class="sh"><div><span class="en">Our work in numbers</span><h2 id="numH" class="rv">조사하고, 발표하고, 바뀔 때까지 묻습니다</h2><p>이 데모에 들어 있는 글 수를 그대로 센 숫자예요(예시). 실제 사이트에서는 글을 올리면 저절로 바뀌어요.</p></div></div>
+    <div class="sh"><div><span class="en">Our work in numbers</span><h2 id="numH" class="rv">숫자로 보는 올해 활동</h2><p>이 데모에 들어 있는 글 수를 그대로 센 숫자예요(예시). 실제 사이트에서는 글을 올리면 저절로 바뀌어요.</p></div></div>
     <div class="nums">
       <a class="rv" href="#/press"><b>${n(POSTS.length)}</b><span>보도자료·성명</span><small>6개 분야</small></a>
       <a class="rv d1" href="#/library"><b>${n(LIB.length)}</b><span>보고서·정책자료</span><small>모두 ${LIB.reduce((a,l)=>a+l.pages,0)}쪽</small></a>
@@ -962,7 +967,7 @@ function viewHome(quiet){
   </div></section>
 
   <section class="sx bg-b" aria-labelledby="libH"><div class="wrap">
-    <div class="sh"><div><span class="en">Library</span><h2 id="libH" class="rv">자료실</h2></div><a class="btn btn-d btn-sm" href="#/library">전체 보기</a></div>
+    <div class="sh"><div><span class="en">Library</span><h2 id="libH" class="rv">자료실</h2></div><a class="btn btn-s btn-sm" href="#/library">전체 보기</a></div>
     <div class="lib">
       <a class="libbig rv" href="#/read/${libs[0].id}">${coverHTML(libs[0])}<span><span class="meta">${LTYPE[libs[0].type]}<span class="dot"></span><span class="num">${libs[0].pages}쪽</span></span><span style="display:block;font-size:20px;font-weight:800;line-height:1.4;letter-spacing:-.03em;margin-top:4px">${esc(libs[0].title)}</span></span></a>
       <div style="border-top:1px solid var(--line)">${libs.slice(1,5).map(libRow).join('')}</div>
